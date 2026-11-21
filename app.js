@@ -39,7 +39,15 @@
     { id: 'tofu', name: 'Tofu croccante', icon: '', price: 2.5, kcal: 150, pro: 16, carbs: 6, fat: 9, allergens: ['soia'], vegan: true },
     { id: 'tempeh', name: 'Tempeh marinato', icon: '', price: 3, kcal: 170, pro: 19, carbs: 8, fat: 10, allergens: ['soia'], vegan: true },
     { id: 'edamame', name: 'Edamame boost', icon: '', price: 1.5, kcal: 90, pro: 9, carbs: 7, fat: 4, allergens: ['soia'], vegan: true },
-    { id: 'uovo-extra', name: 'Extra Uovo', icon: '', price: 1.5, kcal: 70, pro: 6, carbs: 1, fat: 5, allergens: ['uova'], animal: true }
+    { id: 'uovo-extra', name: 'Extra Uovo', icon: '', price: 1.5, kcal: 70, pro: 6, carbs: 1, fat: 5, allergens: ['uova'], animal: true },
+    { id: 'duck', name: 'Anatra al Wok', icon: '', price: 5.5, kcal: 280, pro: 27, carbs: 2, fat: 19, allergens: ['soia'], animal: true, meatFish: true },
+    { id: 'pork', name: 'Maiale al Wok', icon: '', price: 4, kcal: 250, pro: 28, carbs: 4, fat: 14, allergens: ['soia'], animal: true, meatFish: true },
+    { id: 'smoked-turkey', name: 'Tacchino Affumicato', icon: '', price: 4.5, kcal: 170, pro: 30, carbs: 2, fat: 4, allergens: ['soia'], animal: true, meatFish: true },
+    { id: 'calamari', name: 'Calamari', icon: '', price: 5, kcal: 130, pro: 20, carbs: 4, fat: 3, allergens: ['crostacei', 'pesce'], animal: true, meatFish: true },
+    { id: 'gamberetti', name: 'Gamberetti', icon: '', price: 4.5, kcal: 110, pro: 22, carbs: 1, fat: 2, allergens: ['crostacei'], animal: true, meatFish: true },
+    { id: 'salmon', name: 'Salmone', icon: '', price: 6, kcal: 230, pro: 26, carbs: 0, fat: 14, allergens: ['pesce'], animal: true, meatFish: true },
+    { id: 'chicken-katsu', name: 'Chicken Katsu', icon: '', price: 4.5, kcal: 290, pro: 27, carbs: 15, fat: 14, allergens: ['glutine', 'uova'], animal: true, meatFish: true },
+    { id: 'pancetta', name: 'Pancetta', icon: '', price: 3.5, kcal: 240, pro: 14, carbs: 1, fat: 20, allergens: [], animal: true, meatFish: true }
   ];
 
   const VEGGIES = [
@@ -53,7 +61,12 @@
     { id: 'zucchine', name: 'Zucchine', icon: '', price: 0.5, kcal: 15, pro: 1, carbs: 3, fat: 0, allergens: [] },
     { id: 'cipollotto', name: 'Cipollotto', icon: '', price: 0.3, kcal: 10, pro: 0, carbs: 2, fat: 0, allergens: [] },
     { id: 'ananas', name: 'Ananas fresco', icon: '', price: 0.8, kcal: 40, pro: 0, carbs: 10, fat: 0, allergens: [] },
-    { id: 'carote', name: 'Carote', icon: '', price: 0.5, kcal: 20, pro: 1, carbs: 4, fat: 0, allergens: [] }
+    { id: 'carote', name: 'Carote', icon: '', price: 0.5, kcal: 20, pro: 1, carbs: 4, fat: 0, allergens: [] },
+    { id: 'spinaci', name: 'Spinaci', icon: '', price: 0.6, kcal: 25, pro: 3, carbs: 4, fat: 0, allergens: [] },
+    { id: 'mango', name: 'Mango fresco', icon: '', price: 0.9, kcal: 60, pro: 1, carbs: 15, fat: 0, allergens: [] },
+    { id: 'pomodorini', name: 'Pomodorini cherry', icon: '', price: 0.6, kcal: 20, pro: 1, carbs: 4, fat: 0, allergens: [] },
+    { id: 'cipolla-rossa', name: 'Cipolla rossa', icon: '', price: 0.4, kcal: 15, pro: 0, carbs: 3, fat: 0, allergens: [] },
+    { id: 'germogli-bambu', name: 'Germogli di bambù', icon: '', price: 0.7, kcal: 20, pro: 2, carbs: 3, fat: 0, allergens: [] }
   ];
 
   const SAUCES = [
@@ -312,11 +325,15 @@
     pollo: 'special-pollo-grigliato', teriyaki: 'snack-chicken-wings', karaage: 'pro-karaage',
     manzo: 'pro-manzo', 'char-siu': 'pro-char-siu', gamberi: 'ing2-shrimp',
     tofu: 'ing2-tofu', tempeh: 'pro-tempeh', edamame: 'pro-edamame', 'uovo-extra': 'ing2-egg',
+    duck: 'pro-duck', pork: 'pro-pork', 'smoked-turkey': 'pro-smoked-turkey', calamari: 'pro-calamari',
+    gamberetti: 'pro-gamberetti', salmon: 'pro-salmon', 'chicken-katsu': 'pro-chicken-katsu', pancetta: 'pro-pancetta',
     /* verdure */
     'pak-choi': 'ing2-bokchoy', broccoli: 'ing2-greens', champignon: 'ing2-champignon',
     shiitake: 'ing2-shiitake', peperoni: 'ing2-peperoni', 'baby-corn': 'ing2-babycorn',
     germogli: 'ing2-germogli', zucchine: 'ing2-zucchine', cipollotto: 'ing2-cipollotto',
     ananas: 'ing2-pineapple', carote: 'ing2-carrot',
+    spinaci: 'ing2-spinaci', mango: 'ing2-mango', pomodorini: 'ing2-pomodorini',
+    'cipolla-rossa': 'ing2-cipolla-rossa', 'germogli-bambu': 'ing2-germogli-bambu',
     /* salse */
     tokyo: 'top-sesamo', hongkong: 'top-arachidi', saigon: 'top-lime', beijing: 'top-aglio',
     bangkok: 'top-coriandolo', seoul: 'top-sesamo', sichuan: 'top-jalapeno', kungpao: 'top-arachidi',
