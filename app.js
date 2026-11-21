@@ -450,6 +450,7 @@
     shield: '<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/>',
     bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
     flame: '<path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9 0 3-2 4-3 5-1-2-1-4-1-6-3 3-6 6-6 10 0 4 3 7 7 7z"/>',
+    chili: '<path d="M15 6c-4 0-7 3-8 7-.7 3 0 5.5 1 7 .5-4 2.5-7 5.5-9 2-1.2 3-3 1.5-5z"/><path d="M15 6c1.5-1.5 3.5-1.7 5-1"/>',
     heart: '<path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 00-7.1 7.1L12 21l8.8-8.3a5 5 0 000-7.1z"/>',
     pin: '<path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>'
@@ -564,7 +565,7 @@
   }
   function renderSpice() {
     $('#step3-spice').innerHTML = SPICE.map(s => `<button class="spice-opt${state.spice === s.id ? ' selected' : ''}" data-kind="spice" data-id="${s.id}" aria-pressed="${state.spice === s.id}">
-      <span class="flames">${s.flames ? iconSvg('flame').repeat(s.flames) : '<span class="ico">' + iconSvg('leaf') + '</span>'}</span>
+      <span class="flames">${s.flames ? Array.from({ length: s.flames }, () => `<span class="ico">${iconSvg('chili')}</span>`).join('') : '<span class="ico">' + iconSvg('leaf') + '</span>'}</span>
       <strong>${esc(s.name)}</strong><small>${esc(s.desc)}</small>
     </button>`).join('');
   }
