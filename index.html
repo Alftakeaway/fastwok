@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0d0f">
+<meta name="description" content="FastWok — wok saltato a fiamma viva a Roma. Crea la tua bowl, scegli base, proteine, salse e piccantezza. Zero attese, 100% tuo. Ritiro express in 7 minuti a San Lorenzo.">
+<title>FastWok — Fiamma viva, zero attese, 100% tuo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="#hero" aria-label="FastWok — torna all'inizio">
+      <span class="logo-flame" aria-hidden="true">🔥</span>
+      <span class="logo-word">FAST<span>WOK</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <a href="#builder">Il Builder</a>
+      <a href="#signature">Signature</a>
+      <a href="#bites">Street Bites</a>
+      <a href="#info">Dove siamo</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Apri carrello">
+        <span aria-hidden="true">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a class="btn btn-lime header-cta" href="#builder">Crea la tua bowl <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> ROMA · SAN LORENZO · TRATEVERE</div>
+      <h1 class="hero-title">
+        <span class="line line-1">WOK.</span>
+        <span class="line line-2">FLAME.</span>
+        <span class="line line-3">GO<span class="period">.</span></span>
+      </h1>
+      <p class="hero-lead">Fiamma viva, zero attese, <strong>100% tuo.</strong> Il wok saltato al volo che ti mette il pranzo in mano in 7 minuti. Scegli tutto, impazzisci un po', scappa col botto.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-flame btn-lg" href="#builder">Crea la tua Bowl <span aria-hidden="true">→</span></a>
+        <button class="btn btn-ghost btn-lg" id="heroSurprise"><span aria-hidden="true">🎲</span> Sorprendimi</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>7′</strong><span>ritiro express</span></div>
+        <div class="stat"><strong>12+</strong><span>salse & mix</span></div>
+        <div class="stat"><strong>∞</strong><span>combos possibili</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-halo"></div>
+      <div class="flame flame-a"></div>
+      <div class="flame flame-b"></div>
+      <div class="flame flame-c"></div>
+      <div class="flame flame-d"></div>
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="assets/hero-wok-brand.webp" alt="Wok Box FastWok saltata al volo in un mercato notturno" fetchpriority="high">
+        <div class="hero-photo-shine"></div>
+      </div>
+      <div class="float-chip chip-1">🔥 FIAMMA VIVA</div>
+      <div class="float-chip chip-2">⚡ 7 MIN</div>
+      <div class="float-chip chip-3">🌱 100% TUO</div>
+      <div class="float-chip chip-4">🇮🇹 ROMA</div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">SCORRI E BRUCIA <span>↓</span></div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>FIAMMA VIVA</span><i>✦</i><span>ZERO ATTESE</span><i>✦</i><span>100% TUO</span><i>✦</i><span>SALTATO AL WOK</span><i>✦</i><span>FIAMMA VIVA</span><i>✦</i><span>ZERO ATTESE</span><i>✦</i><span>100% TUO</span><i>✦</i><span>SALTATO AL WOK</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ BUILDER ============ -->
+<section class="section builder-section" id="builder">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker"><span>01</span> / BUILD YOUR MENU</div>
+        <h2 class="section-title">IL WOK <em>È TUO.</em></h2>
+        <p class="section-sub">Cinque step, un botto di possibilità. Costruisci la bowl perfetta, noi le diamo fuoco.</p>
+      </div>
+      <div class="head-badge" aria-hidden="true">🔥<span>BUILD<br>YOUR<br>WOK</span></div>
+    </div>
+
+    <div class="builder-layout">
+      <div class="builder-main">
+        <!-- STEPPER -->
+        <ol class="stepper" id="stepper" aria-label="Passaggi del configuratore">
+          <li class="active" data-goto="0"><span class="step-num">01</span><span class="step-label">Formato</span></li>
+          <li data-goto="1"><span class="step-num">02</span><span class="step-label">Base</span></li>
+          <li data-goto="2"><span class="step-num">03</span><span class="step-label">Proteine</span></li>
+          <li data-goto="3"><span class="step-num">04</span><span class="step-label">Salse</span></li>
+          <li data-goto="4"><span class="step-num">05</span><span class="step-label">Topping</span></li>
+        </ol>
+
+        <div class="steps">
+          <!-- STEP 0 -->
+          <div class="step-panel active" data-step="0">
+            <div class="step-head"><span class="step-index">STEP 01</span><h3>Scegli il formato & la taglia</h3><p>Prima decidi quanto fuoco metterci. Dopo, si scende nel vivo.</p></div>
+            <div class="options-grid formats-grid" id="step0-formats"></div>
+            <div class="sub-block" id="soupBlock" hidden>
+              <div class="sub-title">🍜 Scegli il brodo <span>(modalità Soup / Ramen)</span></div>
+              <div class="options-grid small-grid" id="step0-soups"></div>
+            </div>
+          </div>
+
+          <!-- STEP 1 -->
+          <div class="step-panel" data-step="1">
+            <div class="step-head"><span class="step-index">STEP 02</span><h3>La base</h3><p>Il letto dove tutto prende fuoco. Scegline una. Occhio: le Rice Noodles e il Konjac sono senza glutine.</p></div>
+            <div class="mode-toggle" role="group" aria-label="Modalità uovo">
+              <button class="mode-btn active" data-mode="standard">🍳 Standard <small>con verdurine & uovo</small></button>
+              <button class="mode-btn" data-mode="plant">🌱 No Egg <small>100% plant-based</small></button>
+            </div>
+            <div class="options-grid bases-grid" id="step1-bases"></div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-panel" data-step="2">
+            <div class="step-head"><span class="step-index">STEP 03</span><h3>Proteine & extra veggie</h3><p>Multi-selezione: prendine quante ne vuoi (il conto lo vedi a destra, niente sorprese).</p></div>
+            <div class="sub-title">💪 Proteine</div>
+            <div class="options-grid proteins-grid" id="step2-proteins"></div>
+            <div class="sub-title">🥬 Verdure & frutta</div>
+            <div class="options-grid veggies-grid" id="step2-veggies"></div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-panel" data-step="3">
+            <div class="step-head"><span class="step-index">STEP 04</span><h3>Salse & piccantezza</h3><p>Il cuore del gusto. Prendi una salsa, o fa' il mashup con due. Poi scegli quanto bruciare.</p></div>
+            <div class="sauce-tabs" role="tablist" aria-label="Categorie salse">
+              <button class="sauce-tab active" data-tab="classic" role="tab">Classiche & Città</button>
+              <button class="sauce-tab" data-tab="special" role="tab">Special & Fusion</button>
+              <span class="mashup-note" id="mashupNote">💡 Scegli 2 salse per il mashup (+€0.50)</span>
+            </div>
+            <div class="options-grid sauces-grid" id="step3-sauces"></div>
+            <div class="sub-title">🌶️ Livello di piccantezza</div>
+            <div class="spice-selector" id="step3-spice"></div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step-panel" data-step="4">
+            <div class="step-head"><span class="step-index">STEP 05</span><h3>Topping croccanti</h3><p>L'ultimo tocco. Croccante, fresco, sapido: qui si fa la differenza.</p></div>
+            <div class="options-grid toppings-grid" id="step4-toppings"></div>
+          </div>
+        </div>
+
+        <!-- BUILDER NAV + EXTRA -->
+        <div class="builder-controls">
+          <button class="btn btn-outline" id="prevStep" disabled>← Indietro</button>
+          <div class="builder-extra">
+            <button class="btn btn-yellow" id="spinBtn"><span aria-hidden="true">🎲</span> Spin the Wok</button>
+            <button class="btn btn-ghost" id="resetBtn">↺ Reset</button>
+          </div>
+          <button class="btn btn-flame" id="nextStep">Avanti →</button>
+        </div>
+      </div>
+
+      <!-- LIVE SUMMARY -->
+      <aside class="summary-panel" id="summaryPanel" aria-label="Riepilogo bowl in tempo reale">
+        <div class="summary-top">
+          <div class="summary-handle" aria-hidden="true"></div>
+          <div class="summary-headline">
+            <span class="summary-kicker">LA TUA WOK — LIVE</span>
+            <h3 id="bowlNameDisplay">Senza nome</h3>
+          </div>
+          <button class="summary-close" id="summaryClose" aria-label="Chiudi riepilogo">✕</button>
+        </div>
+
+        <div class="name-field">
+          <label for="bowlName">Dai un nome alla tua Wok</label>
+          <input id="bowlName" type="text" maxlength="34" placeholder="Es. La Notturna di San Lorenzo" autocomplete="off">
+        </div>
+
+        <div class="bowl-preview" id="bowlPreview" aria-hidden="true"></div>
+
+        <div class="price-row">
+          <span>Totale</span>
+          <strong id="totalPrice">€0.00</strong>
+        </div>
+
+        <div class="macro-block">
+          <div class="macro-title">MACRO <span>stimate</span></div>
+          <div class="macro-grid">
+            <div class="macro"><span class="macro-label">KCAL</span><strong id="macroKcal">0</strong></div>
+            <div class="macro"><span class="macro-label">PROT</span><strong id="macroProt">0g</strong></div>
+            <div class="macro"><span class="macro-label">CARB</span><strong id="macroCarb">0g</strong></div>
+            <div class="macro"><span class="macro-label">GRASSI</span><strong id="macroFat">0g</strong></div>
+          </div>
+          <div class="macro-bars" id="macroBars"></div>
+        </div>
+
+        <div class="spice-block">
+          <span class="block-label">PICCANTEZZA</span>
+          <div class="spice-display" id="spiceDisplay"></div>
+        </div>
+
+        <div class="badges-block">
+          <span class="block-label">BADGE</span>
+          <div class="badges" id="dietBadges"></div>
+        </div>
+
+        <div class="allergen-block">
+          <span class="block-label">ALLERGENI</span>
+          <div class="allergens" id="allergenChips"><span class="none">Nessuno rilevato</span></div>
+        </div>
+
+        <div class="summary-actions">
+          <button class="btn btn-lime btn-block" id="addToCart">Aggiungi al carrello <span aria-hidden="true">→</span></button>
+          <button class="btn btn-outline btn-block" id="shareBowl">Condividi / Copia ricetta</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- mobile sticky bottom bar -->
+<div class="mobile-bar" id="mobileBar">
+  <div class="mobile-bar-info"><span>La tua Wok</span><strong id="mobilePrice">€0.00</strong></div>
+  <button class="btn btn-lime" id="mobileBarToggle">Vedi bowl <span aria-hidden="true">↑</span></button>
+</div>
+
+<!-- ============ SIGNATURE ============ -->
+<section class="section signature-section" id="signature">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker"><span>02</span> / I PREFERITI DI ROMA</div>
+        <h2 class="section-title">SIGNATURE <em>& COMBO</em></h2>
+        <p class="section-sub">Le ricette che la città ha adottato. Già bilanciate, pronte a essere tue.</p>
+      </div>
+      <div class="head-badge alt" aria-hidden="true">⭐<span>TOP<br>SELLER</span></div>
+    </div>
+    <div class="sig-gallery" aria-label="Alcuni dei nostri piatti">
+      <figure><img src="assets/mix-08.jpg" alt="Wok Box con noodles e broccoli" loading="lazy"><figcaption>Broccoli Wok</figcaption></figure>
+      <figure><img src="assets/mix-11.jpg" alt="Wok Box con verdure croccanti" loading="lazy"><figcaption>Crunch Box</figcaption></figure>
+      <figure><img src="assets/mix-13.jpg" alt="Wok Box con gamberi" loading="lazy"><figcaption>Shrimp Fire</figcaption></figure>
+      <figure><img src="assets/mix-15.jpg" alt="Wok Box con riso e verdure" loading="lazy"><figcaption>Rice Mixed</figcaption></figure>
+      <figure><img src="assets/mix-17.jpg" alt="Wok Box con noodles al lime" loading="lazy"><figcaption>Lime Noodle</figcaption></figure>
+      <figure><img src="assets/mix-18.jpg" alt="Wok Box con gamberi e riso" loading="lazy"><figcaption>Street Special</figcaption></figure>
+    </div>
+    <div class="signature-grid" id="signatureGrid"></div>
+  </div>
+</section>
+
+<!-- ============ BITES ============ -->
+<section class="section bites-section" id="bites">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker"><span>03</span> / ASIAN STREET BITES & BUBBLE BAR</div>
+        <h2 class="section-title">UN BOTTO <em>DI SAPORI.</em></h2>
+        <p class="section-sub">Oltre 25 snack: bao, gyoza, dim sum, karaage, tempura e bubble tea. Perché la bowl da sola non basta mai.</p>
+      </div>
+      <div class="head-badge lime" aria-hidden="true">🥟<span>SNACK<br>ATTACK</span></div>
+    </div>
+    <div class="bites-tabs" role="tablist" aria-label="Categorie street bites">
+      <button class="bites-tab active" data-tab="food" role="tab">🥟 Street Bites</button>
+      <button class="bites-tab" data-tab="drink" role="tab">🧋 Bubble & Drink Bar</button>
+    </div>
+    <div class="bites-grid" id="bitesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ TRANSPARENCY / ALLERGENS ============ -->
+<section class="section transparency-section" id="info">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker"><span>04</span> / TRASPARENZA TOTALE</div>
+        <h2 class="section-title">Niente <em>segretti.</em></h2>
+        <p class="section-sub">Macro stimate, allergeni chiari, scelte consapevoli. Premi un allergene per vedere cosa lo contiene nel nostro menu.</p>
+      </div>
+    </div>
+
+    <div class="transparency-grid">
+      <div class="trans-card">
+        <h3>🚫 Filtra gli allergeni</h3>
+        <p>Tocca un allergene: evidenziamo i piatti che lo contengono e te li contiamo.</p>
+        <div class="allergen-filters" id="allergenFilters"></div>
+        <div class="filter-result" id="filterResult">Nessun filtro attivo — tutto il menu è show.</div>
+      </div>
+      <div class="trans-card">
+        <h3>📊 Come calcoliamo</h3>
+        <p>Le macro sono stime per porzione, sommate ingredienti per ingredienti mentre costruisci. Il totale si aggiorna live.</p>
+        <ul class="legend-list">
+          <li><span class="lg lg-lime">Vegan</span> zero ingredienti animali</li>
+          <li><span class="lg lg-green">Vegetarian</span> uova/verdure ok, no carne/pesce</li>
+          <li><span class="lg lg-yellow">High-Protein</span> almeno 35 g di proteine</li>
+          <li><span class="lg lg-blue">Low-Carb</span> sotto i 35 g di carboidrati</li>
+          <li><span class="lg lg-ghost">GF option</span> base e salse senza glutine</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="section location-section" id="location">
+  <div class="container">
+    <div class="location-card">
+      <div class="location-copy">
+        <div class="kicker light"><span>05</span> / TROVACI A ROMA</div>
+        <h2 class="section-title light-title">TI ASPETTIAMO <em>AL WOK.</em></h2>
+        <p class="location-lead">Due cuori, una città, una sola fiamma. Passa a prendere la tua bowl calda o ordinati da dove vuoi — in 7 minuti è tra le tue mani.</p>
+        <div class="location-details">
+          <div class="loc-item"><span class="loc-ico">📍</span><div><strong>San Lorenzo</strong><small>Via dei Sabelli, 12 — 00185 Roma</small></div></div>
+          <div class="loc-item"><span class="loc-ico">📍</span><div><strong>Trastevere</strong><small>Via della Scala, 44 — 00153 Roma</small></div></div>
+          <div class="loc-item"><span class="loc-ico">🕑</span><div><strong>Orari</strong><small>Lun–Ven 12:00–23:00 · Sab–Dom 12:00–02:00</small></div></div>
+          <div class="loc-item"><span class="loc-ico">⚡</span><div><strong>Ritiro Express</strong><small>Ordina, arriva, via. 7 minuti. Promesso.</small></div></div>
+        </div>
+        <div class="location-ctas">
+          <a class="btn btn-lime btn-lg" href="#builder">Ordina ora <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost btn-lg" href="https://www.google.com/maps/search/?api=1&query=Via+dei+Sabelli+Roma" target="_blank" rel="noopener">Indicazioni <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="location-art" aria-hidden="true">
+        <div class="map-ring ring-1"></div>
+        <div class="map-ring ring-2"></div>
+        <div class="map-pin">🔥</div>
+        <div class="map-label label-1">SAN LORENZO</div>
+        <div class="map-label label-2">TRASTEVERE</div>
+        <div class="map-street s1"></div><div class="map-street s2"></div><div class="map-street s3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-flame" aria-hidden="true">🔥</span>
+      <span class="logo-word">FAST<span>WOK</span></span>
+      <p>Fiamma viva, zero attese, 100% tuo.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#builder">Il Builder</a><a href="#signature">Signature</a><a href="#bites">Street Bites</a><a href="#info">Trasparenza</a><a href="#location">Dove siamo</a>
+    </div>
+    <div class="footer-note">© 2026 FastWok · Roma · Demo concept<br>Fatto con fuoco ⚡ e un pizzico di pepe.</div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Carrello" aria-hidden="true">
+  <div class="drawer-head"><h3>IL TUO ORDINE <span aria-hidden="true">🛒</span></h3><button id="cartClose" aria-label="Chiudi carrello">✕</button></div>
+  <div class="drawer-items" id="cartItems"><p class="empty-cart">Carrello vuoto. Ma non per lungo… 🔥</p></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Totale</span><strong id="cartTotal">€0.00</strong></div>
+    <button class="btn btn-lime btn-block" id="checkoutBtn">Vai al ritiro <span aria-hidden="true">→</span></button>
+    <small>Ritiro express in 7 minuti · Pagamento al locale</small>
+  </div>
+</aside>
+
+<!-- ============ TOASTS ============ -->
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<div class="spin-overlay" id="spinOverlay" aria-hidden="true">
+  <div class="spin-card">
+    <div class="spin-emoji" id="spinEmoji">🎲</div>
+    <div class="spin-text" id="spinText">Stiamo girando il wok…</div>
+    <div class="spin-bar"><div class="spin-bar-fill"></div></div>
+  </div>
+</div>
+
+<!-- ============ LIGHTBOX (zoom foto) ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ingrandita" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Chiudi">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto precedente">‹</button>
+  <figure class="lb-figure">
+    <img id="lbImage" src="" alt="">
+    <figcaption id="lbCaption"></figcaption>
+    <div class="lb-meta">
+      <div class="lb-label">🧺 INGREDIENTI</div>
+      <div class="lb-ingredients" id="lbIngredients"></div>
+      <div class="lb-allergens" id="lbAllergens"></div>
+    </div>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Foto successiva">›</button>
+  <span class="lb-hint">Clicca fuori o premi ESC per chiudere · ← → per navigare</span>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
