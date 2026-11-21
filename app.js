@@ -52,7 +52,8 @@
     { id: 'germogli', name: 'Germogli di soia', icon: '🌱', price: 0.5, kcal: 15, pro: 2, carbs: 2, fat: 0, allergens: ['soia'] },
     { id: 'zucchine', name: 'Zucchine', icon: '🥒', price: 0.5, kcal: 15, pro: 1, carbs: 3, fat: 0, allergens: [] },
     { id: 'cipollotto', name: 'Cipollotto', icon: '🧅', price: 0.3, kcal: 10, pro: 0, carbs: 2, fat: 0, allergens: [] },
-    { id: 'ananas', name: 'Ananas fresco', icon: '🍍', price: 0.8, kcal: 40, pro: 0, carbs: 10, fat: 0, allergens: [] }
+    { id: 'ananas', name: 'Ananas fresco', icon: '🍍', price: 0.8, kcal: 40, pro: 0, carbs: 10, fat: 0, allergens: [] },
+    { id: 'carote', name: 'Carote', icon: '🥕', price: 0.5, kcal: 20, pro: 1, carbs: 4, fat: 0, allergens: [] }
   ];
 
   const SAUCES = [
@@ -165,6 +166,62 @@
       chips: ['🍗 Pollo', '🥦 Broccoli', '🫑 Peperoni'],
       config: { format: 'classic', soup: 'umami', base: 'egg-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'peperoni', 'cipollotto'], sauces: ['tokyo'], spice: 1, toppings: ['sesamo'] },
       nameSuggest: 'Wok Pollo & Verdure'
+    },
+    {
+      id: 'pad-thai-grigliato', name: 'Pad Thai Grigliato', emoji: '🍗', tag: 'GRIGLIATO', tagClass: '', price: 12,
+      desc: 'Rice noodles, pollo alla griglia, germogli, arachidi e lime. Il profumo della griglia che incontra il wok.',
+      chips: ['🍗 Pollo griglia', '🥜 Arachidi', '🍋 Lime'],
+      config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['germogli', 'cipollotto'], sauces: ['satay'], spice: 1, toppings: ['arachidi', 'lime', 'coriandolo'] },
+      nameSuggest: 'Pad Thai Grigliato'
+    },
+    {
+      id: 'combo-fastwok', name: 'Fast Combo Box', emoji: '🥡', tag: 'COMBO', tagClass: 'green', price: 15.9,
+      desc: 'Wok Box con pollo e tofu + 5 gyoza di pollo + bubble tea a scelta. Il pacchetto completo per non alzarsi dal divano.',
+      chips: ['🥡 Wok Box', '🥟 5 Gyoza', '🧋 Bubble Tea'],
+      config: { format: 'classic', soup: 'umami', base: 'egg-noodles', eggMode: 'standard', proteins: ['pollo', 'tofu'], veggies: ['broccoli', 'peperoni'], sauces: ['tokyo'], spice: 1, toppings: ['sesamo', 'cipolla-cr'] },
+      nameSuggest: 'Fast Combo Box'
+    },
+    {
+      id: 'pad-thai-gamberi', name: 'Pad Thai Gamberi', emoji: '🦐', tag: 'TOP SELLER', tagClass: 'green', price: 13.5,
+      desc: 'Noodle di riso, gamberi, uovo, arachidi, germogli e lime. Il Pad Thai che ti porta a Bangkok in un boccone.',
+      chips: ['🦐 Gamberi', '🥜 Arachidi', '🍋 Lime'],
+      config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'standard', proteins: ['gamberi'], veggies: ['germogli', 'cipollotto'], sauces: ['satay'], spice: 1, toppings: ['arachidi', 'lime', 'coriandolo'] },
+      nameSuggest: 'Pad Thai Gamberi'
+    },
+    {
+      id: 'drunken-noodles', name: 'Drunken Noodles', emoji: '🌶️', tag: 'PICCANTE', tagClass: 'hot', price: 12.5,
+      desc: 'Noodle di riso spessi, pollo, basilico thai e peperoni. Quelli che ti fanno vedere due volte la stessa via.',
+      chips: ['🍗 Pollo', '🌿 Basilico', '🫑 Peperoni'],
+      config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['peperoni', 'cipollotto'], sauces: ['sichuan', 'sweetchili'], spice: 2, toppings: ['coriandolo', 'lime'] },
+      nameSuggest: 'Drunken Noodles'
+    },
+    {
+      id: 'yaki-udon', name: 'Yaki Udon Manzo', emoji: '🥩', tag: 'WOK CLASSIC', tagClass: '', price: 13.5,
+      desc: 'Udon spessi saltati con manzo, broccoli, verdure croccanti e sesamo tostato. Giappone in versione fiamma.',
+      chips: ['🥩 Manzo', '🥦 Broccoli', '🌾 Sesamo'],
+      config: { format: 'classic', soup: 'umami', base: 'udon', eggMode: 'standard', proteins: ['manzo'], veggies: ['broccoli', 'zucchine', 'cipollotto'], sauces: ['tokyo'], spice: 1, toppings: ['sesamo'] },
+      nameSuggest: 'Yaki Udon Manzo'
+    },
+    {
+      id: 'egg-noodles-pollo', name: 'Egg Noodles Pollo', emoji: '🍜', tag: 'CLASSICO', tagClass: '', price: 11.5,
+      desc: 'Noodle all’uovo, pollo tenero, cavolo croccante e carote. La comfort food che non delude mai.',
+      chips: ['🍗 Pollo', '🥬 Cavolo', '🥕 Carote'],
+      config: { format: 'classic', soup: 'miso', base: 'egg-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['pak-choi', 'carote'], sauces: ['tokyo'], spice: 0, toppings: ['sesamo'] },
+      nameSuggest: 'Egg Noodles Pollo'
+    },
+    {
+      id: 'jasmine-rice', name: 'Jasmine Rice Bowl', emoji: '🍚', tag: 'FRESH', tagClass: 'green', price: 11.5,
+      desc: 'Riso jasmine profumato con pollo al wok e verdure fresche. Leggero, completo, sempre azzeccato.',
+      chips: ['🍚 Jasmine', '🍗 Pollo', '🥦 Verdure'],
+      config: { format: 'classic', soup: 'umami', base: 'jasmine', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'zucchine', 'peperoni'], sauces: ['hongkong'], spice: 1, toppings: ['cipolla-cr', 'sesamo'] },
+      nameSuggest: 'Jasmine Rice Bowl'
+    },
+    {
+      id: 'green-curry-tofu', name: 'Green Curry Tofu', emoji: '🍛', tag: 'VEGAN', tagClass: 'green', price: 12,
+      desc: 'Curry verde thai cremoso con tofu croccante e noodle di riso. Fresco, profumato, 100% vegetale.',
+      chips: ['🧈 Tofu', '🍛 Curry verde', '🌿 Basilico'],
+      config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'plant', proteins: ['tofu'], veggies: ['pak-choi', 'zucchine'], sauces: ['bangkok'], spice: 2, toppings: ['coriandolo', 'lime'] },
+      nameSuggest: 'Green Curry Tofu'
     }
   ];
 
@@ -193,7 +250,12 @@
     { id: 'tempura-gamberi', name: 'Tempura Gamberi', sub: 'Croccanti, 5 pezzi', emoji: '🍤', price: 7.5, tag: 'CRUNCH', flags: ['glutine', 'crostacei'] },
     { id: 'gamberi-fritti', name: 'Gamberi Croccanti', sub: 'Con salsa agrodolce', emoji: '🍤', price: 7, tag: 'HOT', flags: ['glutine', 'crostacei'] },
     { id: 'chicken-wings', name: 'Ali di Pollo Wok', sub: 'Glassate, 6 pezzi', emoji: '🍗', price: 6.5, tag: 'HOT', flags: ['soia'] },
-    { id: 'misto-box', name: 'Snack Box Misto', sub: 'Gyoza, edamame e croccanti', emoji: '🥡', price: 9.5, tag: 'SHARE', flags: ['glutine', 'soia'] }
+    { id: 'misto-box', name: 'Snack Box Misto', sub: 'Gyoza, edamame e croccanti', emoji: '🥡', price: 9.5, tag: 'SHARE', flags: ['glutine', 'soia'] },
+    { id: 'sate-ayam', name: 'Sate Ayam', sub: 'Spiedini indonesiani, salsa arachidi', emoji: '🍢', price: 6.5, tag: 'INDONESIA', flags: ['arachidi', 'soia'] },
+    { id: 'mango-sticky', name: 'Mango Sticky Rice', sub: 'Riso glutinoso, mango e cocco', emoji: '🥭', price: 5.5, tag: 'DOLCE', flags: [] },
+    { id: 'pisang-goreng', name: 'Pisang Goreng', sub: 'Banana fritta croccante', emoji: '🍌', price: 4.5, tag: 'DOLCE', flags: ['glutine'] },
+    { id: 'tod-mun-pla', name: 'Tod Mun Pla', sub: 'Polpette di pesce thai', emoji: '🐟', price: 6, tag: 'THAILANDIA', flags: ['glutine', 'soia'] },
+    { id: 'tempe-fritti', name: 'Tempe Fritti', sub: 'Frittelle di tempeh e sambal', emoji: '🫘', price: 5.5, tag: 'VEGAN', flags: ['soia', 'glutine'] }
   ];
   const BITES_DRINK = [
     { id: 'bubble-tea', name: 'Bubble Tea', sub: 'Taro / mango / matcha', emoji: '🧋', price: 5.5, tag: 'BEST', flags: [] },
@@ -215,7 +277,7 @@
     tofu: 'ing-tofu', tempeh: 'ing-tofu', edamame: 'ing-veggies', 'uovo-extra': 'ing-eggs',
     'pak-choi': 'ing-veggies', broccoli: 'ing-broccoli', champignon: 'ing-veggies',
     shiitake: 'ing-veggies', peperoni: 'ing-veggies', 'baby-corn': 'ing-veggies',
-    germogli: 'ing-veggies', zucchine: 'ing-veggies', cipollotto: 'ing-veggies', ananas: 'ing-veggies',
+    germogli: 'ing-veggies', zucchine: 'ing-veggies', cipollotto: 'ing-veggies', ananas: 'ing-veggies', carote: 'ing-veggies',
     tokyo: 'ing-noodles', hongkong: 'ing-chili', saigon: 'ing-chili', beijing: 'ing-noodles',
     bangkok: 'ing-chili', seoul: 'ing-chili', sichuan: 'ing-chili', kungpao: 'ing-peanuts',
     mango: 'ing-chili', satay: 'ing-peanuts', sweetchili: 'ing-chili', zero: 'ing-veggies',
@@ -229,7 +291,11 @@
     'student-combo': 'brand-classic.webp', 'notturna': 'mix-07.jpg',
     'pad-thai': 'special-pad-thai-new.jpg', 'yakisoba': 'special-yakisoba.jpg',
     'teriyaki-rice': 'special-teriyaki-rice.jpg', 'udon-gamberi': 'special-udon-gamberi.jpg',
-    'wok-pollo-verdure': 'special-wok-pollo-verdure.jpg'
+    'wok-pollo-verdure': 'special-wok-pollo-verdure.jpg',
+    'pad-thai-grigliato': 'special-pollo-grigliato.jpg', 'combo-fastwok': 'sig-wok-box.webp',
+    'pad-thai-gamberi': 'sig-pad-thai-gamberi-hq.jpg', 'drunken-noodles': 'sig-drunken-noodles-hq.jpg',
+    'yaki-udon': 'sig-yaki-udon-hq.jpg', 'egg-noodles-pollo': 'sig-egg-noodles-pollo-hq.jpg',
+    'jasmine-rice': 'sig-jasmine-rice-hq.jpg', 'green-curry-tofu': 'sig-green-curry-tofu-hq.jpg'
   };
   const BITE_PHOTOS = {
     'gyoza-pollo': 'bite-gyoza-pollo', 'gyoza-veg': 'bite-gyoza-veg', bao: 'bite-bao',
@@ -241,6 +307,8 @@
     momos: 'snack-momos', 'dimsum-mix': 'snack-dimsum-mix', 'hargow-mix': 'snack-hargow-mix',
     'shumai-gambero': 'snack-shumai-gambero', 'tempura-gamberi': 'snack-tempura-gamberi',
     'gamberi-fritti': 'snack-gamberi-fritti', 'chicken-wings': 'snack-chicken-wings', 'misto-box': 'snack-misto-box',
+    'sate-ayam': 'snack-sate-ayam', 'mango-sticky': 'snack-mango-sticky', 'pisang-goreng': 'snack-pisang-goreng',
+    'tod-mun-pla': 'snack-tod-mun-pla', 'tempe-fritti': 'snack-tempe-fritti',
     'bubble-tea': 'drink-bubble-tea', 'te-freddo': 'drink-te-freddo',
     'birra-asia': 'drink-birra', soft: 'drink-soft'
   };
@@ -275,7 +343,12 @@
     'bubble-tea': ['Tè', 'Latte', 'Perle di tapioca', 'Sciroppo'],
     'te-freddo': ['Tè asiatico', 'Ghiaccio', 'Limone', 'Zucchero'],
     'birra-asia': ['Lager asiatica', 'Malto', 'Luppolo'],
-    soft: ['Bevanda gassata', 'Ghiaccio', 'Limone']
+    soft: ['Bevanda gassata', 'Ghiaccio', 'Limone'],
+    'sate-ayam': ['Pollo', 'Spiedini di legno', 'Salsa di arachidi', 'Cetrioli', 'Cipolla'],
+    'mango-sticky': ['Riso glutinoso', 'Mango', 'Latte di cocco', 'Zucchero di palma', 'Sesamo'],
+    'pisang-goreng': ['Banana', 'Farina di riso', 'Zucchero', 'Olio per friggere'],
+    'tod-mun-pla': ['Pesce', 'Pasta di riso', 'Fagiolini', 'Kaffir lime', 'Salsa chili'],
+    'tempe-fritti': ['Tempeh', 'Sambal', 'Farina', 'Erbe aromatiche']
   };
   const GALLERY_INGREDIENTS = {
     'Broccoli Wok': ['Noodles', 'Broccoli', 'Aglio', 'Salsa di soia', 'Sesamo'],
