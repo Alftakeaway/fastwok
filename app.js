@@ -533,15 +533,17 @@
     const flags = [];
     if (it.gf) flags.push('<span class="flag gf">GF</span>');
     if (it.vegan) flags.push('<span class="flag">VEGAN</span>');
-    if (it.sub) flags.push('<span class="flag">' + esc(tr(it.sub)) + '</span>');
-    const photo = PHOTOS[it.id] || (kind === 'spice' && it.id > 0 ? 'ing-chili' : null);
+    if (it.sub && kind !== 'format' && kind !== 'soup') flags.push('<span class="flag">' + esc(tr(it.sub)) + '</span>');
+    const showPhoto = kind !== 'format' && kind !== 'soup';
+    const photo = showPhoto ? (PHOTOS[it.id] || (kind === 'spice' && it.id > 0 ? 'ing-chili' : null)) : null;
     const ico = photo
       ? `<span class="opt-ico"><img class="opt-img" src="assets/${photo}.jpg" alt="" loading="lazy"></span>`
-      : `<span class="opt-ico emoji-only"><span class="opt-ico-svg">${iconSvg('flame')}</span></span>`;
+      : `<span class="opt-ico emoji-only"><span class="opt-ico-svg">${iconSvg(kind === 'format' || kind === 'soup' ? 'cart' : 'flame')}</span></span>`;
     return `<button class="opt${selected ? ' selected' : ''}" data-kind="${kind}" data-id="${esc(it.id)}" aria-pressed="${selected}">
       ${it.tag ? `<span class="opt-tag">${esc(it.tag)}</span>` : ''}
       ${ico}
       <span class="opt-name">${esc(tr(it.name))}</span>
+      ${(kind === 'format' || kind === 'soup') && it.sub ? `<span class="opt-sub">${esc(tr(it.sub))}</span>` : ''}
       ${flags.length ? `<span class="opt-flags">${flags.join('')}</span>` : ''}
       <span class="opt-price">${it.price ? '+' + money(it.price) : tr('incluso')}</span>
     </button>`;
