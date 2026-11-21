@@ -37,7 +37,7 @@ window.I18N = {
   "incluso":"included","piccante":"spicy","Chill":"Chill","Warm":"Warm","Fire":"Fire",
   "Nessun badge":"No badges","aggiunto al carrello!":"added to cart!","Street bite":"Street bite",
   "Wok personalizzato":"Custom wok","Rimuovi":"Remove","Elimina":"Delete",
-  "Inferno Roma":"Rome Inferno","Max 2 salse per il mashup! ":"Max 2 sauces for the mashup! ",
+  "Inferno Roma":"Rome Inferno","Uovo":"Egg","Max 2 salse per il mashup! ":"Max 2 sauces for the mashup! ",
   "Wok pulita, si ricomincia! ":"Wok cleaned, let's go again! ","Wok girato! Ecco la tua":"Wok spun! Here's your",
   "Ricetta copiata negli appunti! ":"Recipe copied to clipboard! ","Ordine pronto! Passa a ritirare tra 7 minuti ":"Order ready! Pick up in 7 min ",
   "Bowl salvata! ":"Bowl saved! ","Bowl rimossa":"Bowl removed","Inserisci la tua email":"Enter your email",

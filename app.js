@@ -318,34 +318,36 @@
     classic: 'mix-01', xl: 'mix-05', fit: 'mix-12', soup: 'mix-04',
     miso: 'ing2-rice', lemongrass: 'top-lime', umami: 'ing2-beef',
     /* basi */
-    'egg-noodles': 'mix-08', 'whole-wheat': 'mix-11', 'rice-noodles': 'mix-17',
-    udon: 'mix-04', jasmine: 'mix-01', 'brown-quinoa': 'ing2-rice',
-    'veggie-mix': 'ing2-mixveg', konjac: 'ing2-enoki',
+    'egg-noodles': 'ing-noodles', 'whole-wheat': 'mix-11', 'rice-noodles': 'mix-17',
+    udon: 'mix-04', jasmine: 'ing2-rice', 'brown-quinoa': 'ing2-rice',
+    'veggie-mix': 'ing2-mixveg', konjac: 'ing-noodles',
     /* proteine */
-    pollo: 'special-pollo-grigliato', teriyaki: 'pro-teriyaki', karaage: 'pro-karaage',
+    pollo: 'ing-chicken', teriyaki: 'pro-teriyaki', karaage: 'pro-karaage',
     manzo: 'pro-manzo', 'char-siu': 'pro-char-siu', gamberi: 'ing2-shrimp',
     tofu: 'ing2-tofu', tempeh: 'pro-tempeh', edamame: 'pro-edamame', 'uovo-extra': 'ing2-egg',
     duck: 'pro-duck', pork: 'pro-pork', 'smoked-turkey': 'pro-smoked-turkey', calamari: 'pro-calamari',
     gamberetti: 'pro-gamberetti', salmon: 'pro-salmon', 'chicken-katsu': 'pro-chicken-katsu', pancetta: 'pro-pancetta',
     /* verdure */
-    'pak-choi': 'ing2-bokchoy', broccoli: 'ing2-greens', champignon: 'ing2-champignon',
+    'pak-choi': 'ing2-bokchoy', broccoli: 'ing-broccoli', champignon: 'ing2-champignon',
     shiitake: 'ing2-shiitake', peperoni: 'ing2-peperoni', 'baby-corn': 'ing2-babycorn',
     germogli: 'ing2-germogli', zucchine: 'ing2-zucchine', cipollotto: 'ing2-cipollotto',
     ananas: 'ing2-pineapple', carote: 'ing2-carrot',
     spinaci: 'ing2-spinaci', mango: 'ing2-mango', pomodorini: 'ing2-pomodorini',
     'cipolla-rossa': 'ing2-cipolla-rossa', 'germogli-bambu': 'ing2-germogli-bambu',
-    /* salse — foto vere di salse in ciotola */
+    /* topping */
+    sesamo: 'top-sesamo', 'cipolla-cr': 'top-cipolla', 'aglio-cr': 'top-aglio',
+    arachidi: 'top-arachidi', anacardi: 'top-anacardi', coriandolo: 'top-coriandolo',
+    lime: 'top-lime', nori: 'top-nori', jalapenos: 'top-jalapeno', 'zenzero-rosa': 'top-zenzero'
+  };
+  /* salse — foto vere di salse in ciotola (mappa separata: 'mango' esiste sia tra verdure sia tra salse) */
+  const SAUCE_PHOTOS = {
     tokyo: 'sauce-35428719', hongkong: 'sauce-18530640', saigon: 'sauce-13523793', beijing: 'sauce-7166546',
     bangkok: 'sauce-17878229', seoul: 'sauce-37057285', sichuan: 'sauce-13651193', kungpao: 'sauce-8994915',
     mango: 'sauce-3832350', satay: 'sauce-34318136', sweetchili: 'sauce-3832359', zero: 'sauce-5899677',
     cocco: 'sauce-5899671', 'curry-rosso': 'sauce-19199222', 'curry-verde': 'sauce-5899675',
     'curry-giallo': 'sauce-5899669', 'curry-giapponese': 'sauce-9685279', massala: 'sauce-17878229',
     sriracha: 'sauce-13651193', hoisin: 'sauce-35428719', unagi: 'sauce-7166546', ponzu: 'sauce-13523793',
-    tamarindo: 'sauce-18530640', 'sesamo-miele': 'sauce-18354021', yuzu: 'sauce-5899677', shoyu: 'sauce-1385185',
-    /* topping */
-    sesamo: 'top-sesamo', 'cipolla-cr': 'top-cipolla', 'aglio-cr': 'top-aglio',
-    arachidi: 'top-arachidi', anacardi: 'top-anacardi', coriandolo: 'top-coriandolo',
-    lime: 'top-lime', nori: 'top-nori', jalapenos: 'top-jalapeno', 'zenzero-rosa': 'top-zenzero'
+    tamarindo: 'sauce-18530640', 'sesamo-miele': 'sauce-18354021', yuzu: 'sauce-5899677', shoyu: 'sauce-1385185'
   };
   const SIG_PHOTOS = {
     'trastevere-fire': 'brand-fire.webp', 'gym-bro': 'mix-06.jpg',
@@ -471,197 +473,34 @@
   function money(n) { return '€' + n.toFixed(2); }
   function esc(s) { return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])); }
 
-  /* ---------------- BOWL ILLUSTRATION ---------------- */
-  function hashSeed(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
-  function rng(seed) { let a = hashSeed(seed); return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
-  function scatter(seed, n, rmin, rmax) {
-    const r = rng(seed), a0 = r() * Math.PI * 2, out = [];
-    for (let i = 0; i < n; i++) {
-      const a = a0 + (r() - .5) * 1.6, rad = rmin + r() * (rmax - rmin);
-      out.push({ x: 200 + Math.cos(a) * rad, y: 200 + Math.sin(a) * rad, rot: r() * 360, s: .8 + r() * .5 });
-    }
-    return out;
-  }
-  const P = (o, inner) => `<g transform="translate(${o.x.toFixed(1)} ${o.y.toFixed(1)}) rotate(${o.rot.toFixed(0)}) scale(${o.s.toFixed(2)})">${inner}</g>`;
-
-  const SAUCE_COLORS = {
-    tokyo: '#a85a20', hongkong: '#d4552a', saigon: '#9aa83a', beijing: '#6b3a1e', bangkok: '#e8b83a',
-    seoul: '#c93a2a', sichuan: '#b8321e', kungpao: '#a8622a', mango: '#f0a02a', satay: '#c98a4a',
-    sweetchili: '#d84a3a', zero: null, cocco: '#f0e8d8', 'curry-rosso': '#c94a2a', 'curry-verde': '#7a9a3a',
-    'curry-giallo': '#e0a82a', 'curry-giapponese': '#b87a3a', massala: '#b85a2a', sriracha: '#d43a2a',
-    hoisin: '#5a2a1a', unagi: '#4a2412', ponzu: '#c9a85a', tamarindo: '#8a4a22', 'sesamo-miele': '#d8a84a',
-    yuzu: '#e8c84a', shoyu: '#3a2010'
+  /* ---------------- LIVE RECIPE STRIP ---------------- */
+  const TILE_CROPS = {
+    'egg-noodles': ['49% 49%', 1.5], 'whole-wheat': ['50% 42%', 1.35], 'rice-noodles': ['50% 45%', 1.4],
+    udon: ['50% 40%', 1.4], konjac: ['62% 60%', 1.7],
+    jasmine: ['22% 50%', 1.7], 'brown-quinoa': ['78% 50%', 1.7],
+    carote: ['18% 80%', 1.6], gamberi: ['40% 65%', 1.5]
   };
-  const PROTEIN_SHAPES = {
-    pollo: ['cube', '#d99a4e', '#a86a2a'], teriyaki: ['cube', '#b06a2a', '#7a4218'], karaage: ['nugget', '#d98f3e', '#a8622a'],
-    manzo: ['strip', '#7a3b22', '#4a2010'], 'char-siu': ['strip', '#a34a2a', '#d84a3a'], gamberi: ['shrimp', '#f08a5a', '#d86a3a'],
-    tofu: ['cube', '#f0e3c0', '#d9c9a0'], tempeh: ['cube', '#c98d5a', '#a86a3a'], edamame: ['beans', '#7ab84a', '#5a9a30'],
-    'uovo-extra': ['egg', '#f5f0e0', '#f5b83d'], duck: ['strip', '#8a4a30', '#5a2a18'], pork: ['strip', '#b06a3a', '#8a4a22'],
-    'smoked-turkey': ['strip', '#c99a7a', '#a87a5a'], calamari: ['ring', '#f0e0c8', '#d9c9a8'], gamberetti: ['shrimp', '#f5a87a', '#e08a5a'],
-    salmon: ['flake', '#f0906a', '#f5d0c0'], 'chicken-katsu': ['nugget', '#e0a04a', '#b87a2a'], pancetta: ['strip', '#b0553a', '#e8c9a8']
-  };
-  const VEGGIE_SHAPES = {
-    'pak-choi': ['leaf', '#3f7a34', '#8aba5a'], broccoli: ['floret', '#3f7a34', '#5a9a44'], champignon: ['slice', '#d9c9a8', '#b8a888'],
-    shiitake: ['slice', '#8a5a34', '#6b4222'], peperoni: ['arc', '#d84a2a', '#e8b83a'], 'baby-corn': ['corn', '#e8c84a', '#d9b030'],
-    germogli: ['sprout', '#e8e0c8', '#c9d88a'], zucchine: ['halfmoon', '#7a9a4a', '#e8ecc9'], cipollotto: ['rings', '#5a9a44', '#8aba5a'],
-    ananas: ['chunk', '#e8c030', '#d9a820'], carote: ['julienne', '#e0782a', '#c9621a'], spinaci: ['leaf', '#2a5a24', '#3f7a34'],
-    mango: ['chunk', '#f0a830', '#e08a20'], pomodorini: ['tomato', '#d83a2a', '#f06a4a'], 'cipolla-rossa': ['arc', '#a85a8a', '#c98aaa'],
-    'germogli-bambu': ['julienne', '#e8dcb8', '#d9c9a0']
-  };
-
-  function proteinPiece(kind, fill, edge) {
-    switch (kind) {
-      case 'cube': return `<rect x="-13" y="-11" width="26" height="22" rx="5" fill="${fill}" stroke="${edge}" stroke-width="2"/><path d="M-7 -4h9M-5 3h7" stroke="${edge}" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>`;
-      case 'nugget': return `<path d="M-14 -4q-2 -10 8 -11q12 -2 15 7q3 9 -6 12q-13 4 -17 -8z" fill="${fill}" stroke="${edge}" stroke-width="2"/><circle cx="-4" cy="-3" r="1.4" fill="${edge}"/><circle cx="5" cy="2" r="1.4" fill="${edge}"/><circle cx="0" cy="6" r="1.2" fill="${edge}"/>`;
-      case 'strip': return `<path d="M-16 -5q8 -6 16 -2q10 4 16 0l-2 9q-8 5 -16 1q-9 -4 -15 1z" fill="${fill}" stroke="${edge}" stroke-width="2"/><path d="M-10 -1q8 -3 18 1" stroke="${edge}" stroke-width="1.5" fill="none" opacity=".7"/>`;
-      case 'shrimp': return `<path d="M-12 2q0 -12 12 -12q11 0 11 9q0 7 -8 7q-6 0 -6 -5" fill="none" stroke="${fill}" stroke-width="9" stroke-linecap="round"/><path d="M-12 2q0 -12 12 -12" fill="none" stroke="${edge}" stroke-width="2" stroke-dasharray="3 4"/><path d="M11 6l6 4l-7 2z" fill="${edge}"/>`;
-      case 'ring': return `<circle r="11" fill="none" stroke="${fill}" stroke-width="7"/><circle r="11" fill="none" stroke="${edge}" stroke-width="1.5" opacity=".7"/>`;
-      case 'flake': return `<path d="M-14 -8q14 -6 28 0q-4 12 -14 14q-10 -2 -14 -14z" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><path d="M-8 -4q8 4 16 0M-6 2q6 3 12 0" stroke="${edge}" stroke-width="1.6" fill="none"/>`;
-      case 'beans': return `<ellipse cx="-7" rx="6" ry="4.5" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><ellipse cx="2" cy="-4" rx="6" ry="4.5" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><ellipse cx="7" cy="4" rx="6" ry="4.5" fill="${fill}" stroke="${edge}" stroke-width="1.5"/>`;
-      case 'egg': return `<ellipse rx="17" ry="13" fill="${fill}" stroke="#d9d0b8" stroke-width="1.5"/><circle r="7" fill="${edge}"/><circle cx="-2" cy="-2" r="2" fill="#ffd87a" opacity=".8"/>`;
-      default: return '';
-    }
-  }
-  function veggiePiece(kind, fill, edge) {
-    switch (kind) {
-      case 'floret': return `<path d="M0 4l0 8" stroke="#7a9a5a" stroke-width="4" stroke-linecap="round"/><circle cx="-6" cy="-2" r="6" fill="${fill}"/><circle cx="6" cy="-2" r="6" fill="${fill}"/><circle cx="0" cy="-7" r="6.5" fill="${edge}"/><circle cx="-3" cy="-5" r="1.3" fill="#8aba6a"/><circle cx="4" cy="-3" r="1.3" fill="#8aba6a"/>`;
-      case 'leaf': return `<path d="M0 -12q10 4 8 14q-8 6 -14 0q-4 -10 6 -14z" fill="${fill}"/><path d="M-1 -8q2 8 1 16" stroke="${edge}" stroke-width="1.5" fill="none"/>`;
-      case 'slice': return `<path d="M-11 2a11 8 0 0 1 22 0z" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><rect x="-3" y="2" width="6" height="8" rx="2" fill="#e8dcc0"/><path d="M-7 0h14" stroke="${edge}" stroke-width="1" opacity=".6"/>`;
-      case 'arc': return `<path d="M-12 4q12 -14 24 0" fill="none" stroke="${fill}" stroke-width="6" stroke-linecap="round"/><path d="M-8 8q8 -9 16 0" fill="none" stroke="${edge}" stroke-width="4" stroke-linecap="round"/>`;
-      case 'corn': return `<ellipse rx="6" ry="10" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><path d="M-3 -6h6M-4 -1h8M-3 4h6" stroke="${edge}" stroke-width="1.2"/>`;
-      case 'sprout': return `<path d="M0 8q-2 -8 2 -14" stroke="${fill}" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="2" cy="-7" r="3" fill="${edge}"/>`;
-      case 'halfmoon': return `<path d="M-11 0a11 11 0 0 1 22 0z" fill="${edge}" stroke="${fill}" stroke-width="3"/><circle cx="-3" cy="-4" r="1" fill="${fill}"/><circle cx="4" cy="-3" r="1" fill="${fill}"/>`;
-      case 'rings': return `<circle r="8" fill="none" stroke="${fill}" stroke-width="3.5"/><circle r="3.5" fill="none" stroke="${edge}" stroke-width="2.5"/>`;
-      case 'chunk': return `<path d="M-10 -8l18 -3l4 14l-16 5z" fill="${fill}" stroke="${edge}" stroke-width="1.5"/><path d="M-4 -4l8 6" stroke="${edge}" stroke-width="1.2" opacity=".7"/>`;
-      case 'julienne': return `<rect x="-12" y="-3" width="24" height="5" rx="2.5" fill="${fill}"/><rect x="-8" y="3" width="18" height="4" rx="2" fill="${edge}" opacity=".85"/>`;
-      case 'tomato': return `<circle r="8.5" fill="${fill}" stroke="#a82418" stroke-width="1.5"/><circle cx="-2.5" cy="-3" r="2" fill="${edge}" opacity=".8"/>`;
-      default: return '';
-    }
-  }
-  function toppingBits(id, r) {
-    const bits = [];
-    const n = id === 'sesamo' ? 26 : id === 'nori' ? 10 : 14;
-    for (let i = 0; i < n; i++) {
-      const a = r() * Math.PI * 2, rad = 20 + r() * 135, x = 200 + Math.cos(a) * rad, y = 200 + Math.sin(a) * rad, rot = r() * 360;
-      let s = '';
-      if (id === 'sesamo') s = `<ellipse rx="2.6" ry="1.5" fill="#f5ead0" stroke="#d9c9a0" stroke-width=".5"/>`;
-      else if (id === 'arachidi') s = `<ellipse rx="3.4" ry="2.6" fill="#c98a4a" stroke="#a86a2a" stroke-width=".8"/>`;
-      else if (id === 'anacardi') s = `<path d="M-4 0q0 -5 5 -4q4 1 3 5" fill="none" stroke="#d9a85a" stroke-width="3.5" stroke-linecap="round"/>`;
-      else if (id === 'cipolla-cr' || id === 'aglio-cr') s = `<path d="M-4 -2q4 -3 8 0q-2 4 -8 0z" fill="${id === 'aglio-cr' ? '#e8d0a0' : '#c98a3a'}"/>`;
-      else if (id === 'coriandolo') s = `<path d="M0 -5q5 1 4 6q-5 3 -8 0q-1 -5 4 -6z" fill="#4a8a3a"/><path d="M0 -3v7" stroke="#2a5a24" stroke-width="1"/>`;
-      else if (id === 'nori') s = `<rect x="-5" y="-1.6" width="10" height="3.2" rx="1" fill="#1a2a1a"/>`;
-      else if (id === 'jalapeno') s = `<circle r="4.5" fill="none" stroke="#5a9a30" stroke-width="2.5"/><circle r="1.2" fill="#e8e0c0"/>`;
-      else if (id === 'lime') continue;
-      else s = `<circle r="2" fill="#d9c9a0"/>`;
-      bits.push(`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot.toFixed(0)})">${s}</g>`);
-    }
-    if (id === 'lime') {
-      bits.push(`<g transform="translate(292 118) rotate(24)"><path d="M0 0a26 26 0 0 1 0 52z" fill="#c9e05a" stroke="#8aa830" stroke-width="3"/><path d="M3 6l0 40M3 10l16 6M3 26l18 0M3 42l16 -6" stroke="#e8f0a0" stroke-width="2.5"/></g>`);
-    }
-    return bits.join('');
-  }
-
-  function bowlSVG(cfg, uid) {
-    const u = uid || 'b';
+  function recipeHTML(cfg) {
+    const items = [];
     const base = get(BASES, cfg.base);
-    const fmt = get(FORMATS, cfg.format);
-    const soup = fmt && fmt.id === 'soup' ? get(SOUPS, cfg.soup) : null;
-    const layers = [];
-    const push = inner => layers.push(`<g class="bowl-layer" style="animation-delay:${layers.length * 40}ms">${inner}</g>`);
-
-    if (soup) {
-      const broth = { miso: '#c98d4e', lemongrass: '#d8b25a', umami: '#6b3a1e' }[soup.id] || '#c98d4e';
-      const r = rng('broth' + soup.id);
-      let drops = '';
-      for (let i = 0; i < 14; i++) { const a = r() * Math.PI * 2, rad = r() * 150; drops += `<circle cx="${(200 + Math.cos(a) * rad).toFixed(1)}" cy="${(200 + Math.sin(a) * rad).toFixed(1)}" r="${(2 + r() * 4).toFixed(1)}" fill="#f5e0b0" opacity=".35"/>`; }
-      push(`<circle cx="200" cy="200" r="168" fill="${broth}"/>${drops}`);
-    }
-
-    if (base) {
-      const r = rng('base' + base.id);
-      let s = '';
-      if (['jasmine', 'brown-quinoa'].includes(base.id)) {
-        const fill = base.id === 'jasmine' ? '#f5eeda' : '#c9a27a';
-        for (let i = 0; i < 110; i++) {
-          const a = r() * Math.PI * 2, rad = Math.sqrt(r()) * 158;
-          s += `<ellipse cx="${(200 + Math.cos(a) * rad).toFixed(1)}" cy="${(200 + Math.sin(a) * rad).toFixed(1)}" rx="4.5" ry="2.2" fill="${fill}" stroke="rgba(0,0,0,.15)" stroke-width=".5" transform="rotate(${(r() * 180).toFixed(0)} ${(200 + Math.cos(a) * rad).toFixed(1)} ${(200 + Math.sin(a) * rad).toFixed(1)})"/>`;
-        }
-        if (base.id === 'brown-quinoa') for (let i = 0; i < 24; i++) { const a = r() * Math.PI * 2, rad = Math.sqrt(r()) * 150; s += `<circle cx="${(200 + Math.cos(a) * rad).toFixed(1)}" cy="${(200 + Math.sin(a) * rad).toFixed(1)}" r="1.8" fill="#e8d9b0"/>`; }
-      } else if (base.id === 'veggie-mix') {
-        const greens = ['#3f7a34', '#5a9a44', '#7ab84a', '#2a5a24', '#e0782a'];
-        for (let i = 0; i < 46; i++) {
-          const a = r() * Math.PI * 2, rad = Math.sqrt(r()) * 150, x = 200 + Math.cos(a) * rad, y = 200 + Math.sin(a) * rad;
-          s += `<rect x="${(x - 11).toFixed(1)}" y="${(y - 2.5).toFixed(1)}" width="22" height="5" rx="2.5" fill="${greens[i % greens.length]}" transform="rotate(${(r() * 180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
-        }
-      } else {
-        const noodle = { 'egg-noodles': ['#e9b44c', '#d9a03c', 7], 'whole-wheat': ['#c99a5b', '#b8874a', 7], 'rice-noodles': ['#f0e6d2', '#e0d4bc', 5], udon: ['#f2ead8', '#e2d8c2', 10], konjac: ['rgba(240,240,235,.55)', 'rgba(220,220,215,.45)', 4] }[base.id] || ['#e9b44c', '#d9a03c', 7];
-        s += `<circle cx="200" cy="200" r="160" fill="${noodle[1]}" opacity=".28"/>`;
-        for (let i = 0; i < 20; i++) {
-          let x = 200 + (r() - .5) * 260, y = 200 + (r() - .5) * 260;
-          const dir = r() * Math.PI * 2, amp = 12 + r() * 12, step = 42 + r() * 26;
-          let d = `M${x.toFixed(1)} ${y.toFixed(1)}`;
-          for (let k = 0; k < 3; k++) {
-            const sign = k % 2 ? 1 : -1, px = Math.cos(dir + Math.PI / 2) * amp * sign, py = Math.sin(dir + Math.PI / 2) * amp * sign;
-            const ex = x + Math.cos(dir) * step, ey = y + Math.sin(dir) * step;
-            d += ` c${(Math.cos(dir) * step * .33 + px).toFixed(1)} ${(Math.sin(dir) * step * .33 + py).toFixed(1)} ${(Math.cos(dir) * step * .66 + px).toFixed(1)} ${(Math.sin(dir) * step * .66 + py).toFixed(1)} ${(ex - x).toFixed(1)} ${(ey - y).toFixed(1)}`;
-            x = ex; y = ey;
-          }
-          s += `<path d="${d}" fill="none" stroke="${i % 2 ? noodle[0] : noodle[1]}" stroke-width="${noodle[2]}" stroke-linecap="round" opacity="${soup ? '.8' : '.95'}"/>`;
-        }
-      }
-      push(s);
-    }
-
-    (cfg.sauces || []).forEach(id => {
-      const col = SAUCE_COLORS[id];
-      if (!col) return;
-      const r = rng('sauce' + id);
-      let drizzle = '';
-      for (let i = 0; i < 3; i++) {
-        const y = 110 + i * 70 + (r() - .5) * 30, a = (r() > .5 ? 1 : -1) * (26 + r() * 12);
-        drizzle += `<path d="M60 ${y.toFixed(0)} q70 ${a.toFixed(0)} 140 0 t140 0" fill="none" stroke="${col}" stroke-width="5" stroke-linecap="round" opacity=".45"/>`;
-      }
-      push(`<circle cx="200" cy="200" r="168" fill="${col}" opacity=".16"/>${drizzle}<ellipse cx="150" cy="130" rx="70" ry="34" fill="#fff" opacity=".06"/>`);
-    });
-
-    if (cfg.eggMode === 'standard') push(scatter('egg', 1, 55, 95).map(o => P(o, proteinPiece('egg', '#f5f0e0', '#f5b83d'))).join(''));
-
-    (cfg.proteins || []).forEach(id => {
-      const def = PROTEIN_SHAPES[id]; if (!def) return;
-      push(scatter('pro' + id, def[0] === 'egg' ? 2 : 5, 35, 125).map(o => P(o, proteinPiece(def[0], def[1], def[2]))).join(''));
-    });
-    (cfg.veggies || []).forEach(id => {
-      const def = VEGGIE_SHAPES[id]; if (!def) return;
-      push(scatter('veg' + id, 5, 40, 135).map(o => P(o, veggiePiece(def[0], def[1], def[2]))).join(''));
-    });
-    (cfg.toppings || []).forEach(id => push(toppingBits(id, rng('top' + id))));
-
-    if (cfg.spice > 0) {
-      const r = rng('spice' + cfg.spice);
-      let flecks = '';
-      const n = cfg.spice * 9;
-      for (let i = 0; i < n; i++) {
-        const a = r() * Math.PI * 2, rad = Math.sqrt(r()) * 150;
-        flecks += `<rect x="${(200 + Math.cos(a) * rad).toFixed(1)}" y="${(200 + Math.sin(a) * rad).toFixed(1)}" width="4" height="2.4" rx="1" fill="#d81f1f" transform="rotate(${(r() * 180).toFixed(0)} ${(200 + Math.cos(a) * rad).toFixed(1)} ${(200 + Math.sin(a) * rad).toFixed(1)})"/>`;
-      }
-      push(flecks + (cfg.spice === 3 ? '<circle cx="200" cy="200" r="168" fill="#d81f1f" opacity=".1"/>' : ''));
-    }
-
-    return `<svg class="bowl-svg" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-      <defs>
-        <radialGradient id="${u}-metal" cx=".38" cy=".32" r=".9"><stop offset="0" stop-color="#4a4440"/><stop offset=".55" stop-color="#2a2522"/><stop offset="1" stop-color="#141110"/></radialGradient>
-        <radialGradient id="${u}-inner" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#3a2a1e"/><stop offset="1" stop-color="#150d08"/></radialGradient>
-        <clipPath id="${u}-clip"><circle cx="200" cy="200" r="168"/></clipPath>
-      </defs>
-      <circle cx="200" cy="200" r="196" fill="url(#${u}-metal)" stroke="#0a0a0b" stroke-width="3"/>
-      <circle cx="200" cy="200" r="181" fill="#1a1512"/>
-      <circle cx="200" cy="200" r="170" fill="url(#${u}-inner)"/>
-      <g clip-path="url(#${u}-clip)">${layers.join('')}</g>
-      <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="2"/>
-      <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(255,120,40,.3)" stroke-width="2" stroke-dasharray="6 8"/>
-    </svg>`;
+    if (base) items.push({ it: base, kind: 'base' });
+    if (cfg.eggMode === 'standard') items.push({ it: { id: 'uovo', name: 'Uovo', photo: 'ing2-egg' }, kind: 'egg' });
+    (cfg.proteins || []).forEach(id => { const it = get(PROTEINS, id); if (it) items.push({ it, kind: 'protein' }); });
+    (cfg.veggies || []).forEach(id => { const it = get(VEGGIES, id); if (it) items.push({ it, kind: 'veggie' }); });
+    (cfg.sauces || []).forEach(id => { const it = get(SAUCES, id); if (it) items.push({ it, kind: 'sauce' }); });
+    (cfg.toppings || []).forEach(id => { const it = get(TOPPINGS, id); if (it) items.push({ it, kind: 'topping' }); });
+    if (cfg.spice > 0) { const sp = get(SPICE, cfg.spice); if (sp) items.push({ it: { id: 'spice', name: sp.name, photo: 'ing-chili' }, kind: 'spice' }); }
+    return items.map((entry, i) => {
+      const it = entry.it;
+      const photo = it.photo || (entry.kind === 'sauce' ? SAUCE_PHOTOS : PHOTOS)[it.id] || 'ing-noodles';
+      const crop = TILE_CROPS[it.id] || ['50% 45%', 1.3];
+      return `<span class="recipe-unit">${i ? '<span class="recipe-plus" aria-hidden="true">+</span>' : ''}` +
+        `<span class="recipe-item" style="animation-delay:${i * 45}ms">` +
+        `<span class="recipe-photo"><img src="assets/${photo}.jpg" alt="" loading="lazy" decoding="async" style="object-position:${crop[0]};--z:${crop[1]}"></span>` +
+        `<span class="recipe-name">${esc(tr(it.name))}</span></span></span>`;
+    }).join('');
   }
-  const HERO_BOWL = { format: 'classic', soup: 'miso', base: 'egg-noodles', eggMode: 'standard', proteins: ['pollo', 'gamberi'], veggies: ['broccoli', 'carote', 'peperoni'], sauces: ['tokyo'], spice: 2, toppings: ['sesamo', 'coriandolo', 'lime'] };
+
   function $ (sel) { return document.querySelector(sel); }
   function $$ (sel) { return Array.from(document.querySelectorAll(sel)); }
   function rnd(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -729,9 +568,10 @@
     if (it.gf) flags.push('<span class="flag gf">GF</span>');
     if (it.vegan) flags.push('<span class="flag">VEGAN</span>');
     if (it.sub) flags.push('<span class="flag">' + esc(tr(it.sub)) + '</span>');
-    const photo = PHOTOS[it.id] || (kind === 'spice' && it.id > 0 ? 'ing-chili' : null);
+    const photo = (kind === 'sauce' ? SAUCE_PHOTOS : PHOTOS)[it.id] || (kind === 'spice' && it.id > 0 ? 'ing-chili' : null);
+    const crop = TILE_CROPS[it.id] || ['50% 45%', 1.3];
     const ico = photo
-      ? `<span class="opt-ico"><img class="opt-img" src="assets/${photo}.jpg" alt="" loading="lazy"></span>`
+      ? `<span class="opt-ico"><img class="opt-img" src="assets/${photo}.jpg" alt="" loading="lazy" style="object-position:${crop[0]};--z:${crop[1]}"></span>`
       : `<span class="opt-ico emoji-only"><span class="opt-ico-svg">${iconSvg('flame')}</span></span>`;
     return `<button class="opt${selected ? ' selected' : ''}" data-kind="${kind}" data-id="${esc(it.id)}" aria-pressed="${selected}">
       ${it.tag ? `<span class="opt-tag">${esc(it.tag)}</span>` : ''}
@@ -798,7 +638,7 @@
       ? Array.from(r.allergens).map(a => `<span class="allergen-chip"> ${esc(a)}</span>`).join('')
       : '<span class="none">Nessuno rilevato</span>';
 
-    $('#bowlPreview').innerHTML = bowlSVG(state, 'live');
+    $('#bowlPreview').innerHTML = recipeHTML(state);
 
     const nm = state.name.trim() || 'Senza nome';
     $('#bowlNameDisplay').textContent = nm;
@@ -1381,7 +1221,7 @@
     if (window.applyI18n) window.applyI18n(lang);
     $$('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
     hydrateIcons();
-    $('#heroBowl').innerHTML = bowlSVG(HERO_BOWL, 'hero');
+    $('#heroBowl').innerHTML = '<span class="hero-photo-wrap"><img class="hero-photo" src="assets/hero-wok.jpg" alt="Bowl di udon al wok con verdure e croccante"></span>';
     $('#statSauces').textContent = SAUCES.length;
     loadCart();
     renderAllOptions();
