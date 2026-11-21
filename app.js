@@ -222,6 +222,20 @@
       chips: ['🧈 Tofu', '🍛 Curry verde', '🌿 Basilico'],
       config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'plant', proteins: ['tofu'], veggies: ['pak-choi', 'zucchine'], sauces: ['bangkok'], spice: 2, toppings: ['coriandolo', 'lime'] },
       nameSuggest: 'Green Curry Tofu'
+    },
+    {
+      id: 'riso-fritto-box', name: 'Riso Fritto Box', emoji: '🍚', tag: 'CLASSICO', tagClass: '', price: 11.5,
+      desc: 'Riso jasmine saltato al wok con pollo, uovo, broccoli e carote. Quello che ordini quando hai già deciso, ma non vuoi pensarci.',
+      chips: ['🍚 Riso fritto', '🍗 Pollo', '🥕 Verdure'],
+      config: { format: 'classic', soup: 'umami', base: 'jasmine', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'carote', 'cipollotto'], sauces: ['hongkong'], spice: 1, toppings: ['sesamo', 'lime'] },
+      nameSuggest: 'Riso Fritto Box'
+    },
+    {
+      id: 'veggie-wok-box', name: 'Veggie Wok Box', emoji: '🥬', tag: 'VEGAN', tagClass: 'green', price: 11.5,
+      desc: 'Rice noodles, tofu croccante, edamame e verdure croccanti al curry Bangkok. Leggera, profumata, senza compromessi.',
+      chips: ['🧈 Tofu', '🫛 Edamame', '🥬 Verdure'],
+      config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'plant', proteins: ['tofu', 'edamame'], veggies: ['pak-choi', 'zucchine', 'broccoli'], sauces: ['bangkok'], spice: 1, toppings: ['coriandolo', 'sesamo'] },
+      nameSuggest: 'Veggie Wok Box'
     }
   ];
 
@@ -295,7 +309,8 @@
     'pad-thai-grigliato': 'special-pollo-grigliato.jpg', 'combo-fastwok': 'sig-wok-box.webp',
     'pad-thai-gamberi': 'sig-pad-thai-gamberi-hq.jpg', 'drunken-noodles': 'sig-drunken-noodles-hq.jpg',
     'yaki-udon': 'sig-yaki-udon-hq.jpg', 'egg-noodles-pollo': 'sig-egg-noodles-pollo-hq.jpg',
-    'jasmine-rice': 'sig-jasmine-rice-hq.jpg', 'green-curry-tofu': 'sig-green-curry-tofu-hq.jpg'
+    'jasmine-rice': 'sig-jasmine-rice-hq.jpg', 'green-curry-tofu': 'sig-green-curry-tofu-hq.jpg',
+    'riso-fritto-box': 'sig-riso-fritto-box.jpg', 'veggie-wok-box': 'sig-veggie-wok-box.jpg'
   };
   const BITE_PHOTOS = {
     'gyoza-pollo': 'bite-gyoza-pollo', 'gyoza-veg': 'bite-gyoza-veg', bao: 'bite-bao',
