@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#0d0d0f">
 <link rel="icon" type="image/gif" href="assets/favicon.gif">
 <meta name="description" content="FastWok — wok saltato a fiamma viva a Roma. Crea la tua bowl, scegli base, proteine, salse e piccantezza. Zero attese, 100% tuo. Ritiro express in 7 minuti a San Lorenzo.">
+<meta property="og:title" content="FastWok — Fiamma viva, zero attese, 100% tuo">
+<meta property="og:description" content="Crea la tua bowl, scegli base, proteine, salse e piccantezza. Ritiro express in 7 minuti a San Lorenzo e Trastevere.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/sig-pad-thai-gamberi-hq.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <title>FastWok — Fiamma viva, zero attese, 100% tuo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +51,7 @@
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <div class="eyebrow"><span class="dot"></span> ROMA · SAN LORENZO · TRATEVERE</div>
+      <div class="eyebrow"><span class="dot"></span> ROMA · SAN LORENZO · TRASTEVERE</div>
       <h1 class="hero-title">
         <span class="line line-1">WOK.</span>
         <span class="line line-2">FLAME.</span>
@@ -59,7 +64,7 @@
       </div>
       <div class="hero-stats">
         <div class="stat"><strong>7′</strong><span data-i18n="ritiro express">ritiro express</span></div>
-        <div class="stat"><strong>12+</strong><span data-i18n="Salse &amp; mix">salse & mix</span></div>
+        <div class="stat"><strong id="statSauces">26</strong><span data-i18n="Salse &amp; mix">salse & mix</span></div>
         <div class="stat"><i class="ico ico-stat" data-icon="infinity" aria-hidden="true"></i><span data-i18n="combos possibili">combos possibili</span></div>
       </div>
     </div>
@@ -71,7 +76,7 @@
       <div class="flame flame-c"></div>
       <div class="flame flame-d"></div>
       <div class="hero-wok-graphic">
-        <div class="wok-bowl"></div>
+        <div class="hero-bowl" id="heroBowl"></div>
         <div class="wok-steam s1"></div><div class="wok-steam s2"></div><div class="wok-steam s3"></div>
       </div>
       <div class="float-chip chip-1"> FIAMMA VIVA</div>
@@ -169,7 +174,7 @@
         <div class="builder-controls">
           <button class="btn btn-outline" id="prevStep" disabled>← Indietro</button>
           <div class="builder-extra">
-            <button class="btn btn-yellow" id="spinBtn"><span aria-hidden="true"></span> Spin the Wok</button>
+            <button class="btn btn-yellow" id="spinBtn"><i class="ico" data-icon="dice" aria-hidden="true"></i> Spin the Wok</button>
             <button class="btn btn-ghost" id="resetBtn">↺ Reset</button>
           </div>
           <button class="btn btn-flame" id="nextStep">Avanti →</button>
@@ -184,7 +189,7 @@
             <span class="summary-kicker">LA TUA WOK — LIVE</span>
             <h3 id="bowlNameDisplay">Senza nome</h3>
           </div>
-          <button class="summary-close" id="summaryClose" aria-label="Chiudi riepilogo"></button>
+          <button class="summary-close" id="summaryClose" aria-label="Chiudi riepilogo"><i class="ico" data-icon="close" aria-hidden="true"></i></button>
         </div>
 
         <div class="name-field">
@@ -297,7 +302,7 @@
       <div>
         <div class="kicker"><span>03b</span> / DOLCI &amp; BEVANDE</div>
         <h2 class="section-title">IL FINALE <em>CHE VUOI.</em></h2>
-        <p class="section-sub" data-i18n="Dolci e bevande per chiudere in bellezza. Il 20-30% di margine in più sul tuo ticket.">Dolci e bevande per chiudere in bellezza. Il 20-30% di margine in più sul tuo ticket.</p>
+        <p class="section-sub" data-i18n="Dolci thai, banana fritta, mango sticky rice e bubble tea: il finale che non ti aspetti.">Dolci thai, banana fritta, mango sticky rice e bubble tea: il finale che non ti aspetti.</p>
       </div>
     </div>
     <div class="sweets-grid" id="sweetsGrid"></div>
@@ -365,10 +370,10 @@
         <h2 class="section-title light-title" data-i18n="TI ASPETTIAMO AL WOK." data-i18n-html>TI ASPETTIAMO <em>AL WOK.</em></h2>
         <p class="location-lead">Due cuori, una città, una sola fiamma. Passa a prendere la tua bowl calda o ordinati da dove vuoi — in 7 minuti è tra le tue mani.</p>
         <div class="location-details">
-          <div class="loc-item"><span class="loc-ico"></span><div><strong>San Lorenzo</strong><small>Via dei Sabelli, 12 — 00185 Roma</small></div></div>
-          <div class="loc-item"><span class="loc-ico"></span><div><strong>Trastevere</strong><small>Via della Scala, 44 — 00153 Roma</small></div></div>
-          <div class="loc-item"><span class="loc-ico"></span><div><strong>Orari</strong><small>Lun–Ven 12:00–23:00 · Sab–Dom 12:00–02:00</small></div></div>
-          <div class="loc-item"><span class="loc-ico"></span><div><strong>Ritiro Express</strong><small>Ordina, arriva, via. 7 minuti. Promesso.</small></div></div>
+          <div class="loc-item"><span class="loc-ico"><i class="ico" data-icon="pin" aria-hidden="true"></i></span><div><strong>San Lorenzo</strong><small>Via dei Sabelli, 12 — 00185 Roma</small></div></div>
+          <div class="loc-item"><span class="loc-ico"><i class="ico" data-icon="pin" aria-hidden="true"></i></span><div><strong>Trastevere</strong><small>Via della Scala, 44 — 00153 Roma</small></div></div>
+          <div class="loc-item"><span class="loc-ico"><i class="ico" data-icon="clock" aria-hidden="true"></i></span><div><strong data-i18n="Orari">Orari</strong><small>Lun–Ven 12:00–23:00 · Sab–Dom 12:00–02:00</small></div></div>
+          <div class="loc-item"><span class="loc-ico"><i class="ico" data-icon="bolt" aria-hidden="true"></i></span><div><strong data-i18n="Ritiro Express">Ritiro Express</strong><small>Ordina, arriva, via. 7 minuti. Promesso.</small></div></div>
         </div>
         <div class="location-ctas">
           <a class="btn btn-lime btn-lg" href="#builder">Ordina ora <span aria-hidden="true">→</span></a>
@@ -393,7 +398,7 @@
       <p>Fiamma viva, zero attese, 100% tuo.</p>
     </div>
     <div class="footer-links">
-      <a href="#builder">Il Builder</a><a href="#signature">Signature</a><a href="#bites">Street Bites</a><a href="#info">Trasparenza</a><a href="#location">Dove siamo</a>
+      <a href="#builder">Il Builder</a><a href="#signature">Signature</a><a href="#bites">Street Bites</a><a href="#info">Trasparenza</a><a href="#location">Dove siamo</a><a href="#" id="privacyLink" data-i18n="Privacy">Privacy</a>
     </div>
     <div class="footer-note">© 2026 FastWok · Roma · Demo concept<br>Fatto con fuoco  e un pizzico di pepe.<br><span class="footer-credit">Designed &amp; Developed by <a href="mailto:alfredoforte.web@gmail.com">alfredoforte.web@gmail.com</a></span></div>
   </div>
@@ -402,7 +407,7 @@
 <!-- ============ CART DRAWER ============ -->
 <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Carrello" aria-hidden="true">
-  <div class="drawer-head"><h3>IL TUO ORDINE <span aria-hidden="true"></span></h3><button id="cartClose" aria-label="Chiudi carrello"></button></div>
+  <div class="drawer-head"><h3><span data-i18n="IL TUO ORDINE">IL TUO ORDINE</span> <i class="ico" data-icon="flame" aria-hidden="true"></i></h3><button id="cartClose" aria-label="Chiudi carrello"><i class="ico" data-icon="close" aria-hidden="true"></i></button></div>
   <div class="drawer-items" id="cartItems"><p class="empty-cart">Carrello vuoto. Ma non per lungo… </p></div>
   <div class="drawer-foot">
     <div class="drawer-total"><span>Totale</span><strong id="cartTotal">€0.00</strong></div>
@@ -424,7 +429,7 @@
 
 <!-- ============ LIGHTBOX (zoom foto) ============ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ingrandita" aria-hidden="true">
-  <button class="lb-close" id="lbClose" aria-label="Chiudi"></button>
+  <button class="lb-close" id="lbClose" aria-label="Chiudi"><i class="ico" data-icon="close" aria-hidden="true"></i></button>
   <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto precedente">‹</button>
   <figure class="lb-figure">
     <img id="lbImage" src="" alt="">
@@ -438,6 +443,17 @@
   <button class="lb-nav lb-next" id="lbNext" aria-label="Foto successiva">›</button>
   <span class="lb-hint">Clicca fuori o premi ESC per chiudere · ← → per navigare</span>
 </div>
+
+<!-- ============ PRIVACY ============ -->
+<dialog class="privacy-dialog" id="privacyDialog" aria-labelledby="privacyTitle">
+  <div class="privacy-head">
+    <h3 id="privacyTitle" data-i18n="Informativa privacy">Informativa privacy</h3>
+    <button id="privacyClose" aria-label="Chiudi"><i class="ico" data-icon="close" aria-hidden="true"></i></button>
+  </div>
+  <p data-i18n="FastWok è un concept demo: nessun dato lascia il tuo dispositivo. Bowl salvate, carrello e lingua vivono nel localStorage del browser.">FastWok è un concept demo: nessun dato lascia il tuo dispositivo. Bowl salvate, carrello e lingua vivono nel localStorage del browser.</p>
+  <p data-i18n="L'email che inserisci serve solo a etichettare le bowl su questo dispositivo: niente account, niente newsletter, niente cookie di profilazione.">L'email che inserisci serve solo a etichettare le bowl su questo dispositivo: niente account, niente newsletter, niente cookie di profilazione.</p>
+  <p data-i18n="La mappa è incorporata da Google Maps ed è soggetta alla loro informativa privacy.">La mappa è incorporata da Google Maps ed è soggetta alla loro informativa privacy.</p>
+</dialog>
 
 <script src="i18n.js"></script>
 <script src="app.js"></script>

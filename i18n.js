@@ -60,7 +60,12 @@ window.I18N = {
   "Banana fritta croccante":"Crispy fried banana","Polpette di pesce thai":"Thai fish cakes",
   "Frittelle di tempeh e sambal":"Tempeh fritters with sambal","Taro / mango / matcha":"Taro / mango / matcha",
   "Asiatico, 4 gusti":"Asian, 4 flavors","Lager / rice beer":"Lager / rice beer","Classici e orientali":"Classic and oriental",
-  "Sfoglie di wonton fritte":"Fried wonton sheets","Tofu / riso / verdure":"Tofu / rice / veggies"
+  "Sfoglie di wonton fritte":"Fried wonton sheets","Tofu / riso / verdure":"Tofu / rice / veggies",
+  "Dolci thai, banana fritta, mango sticky rice e bubble tea: il finale che non ti aspetti.":"Thai sweets, fried banana, mango sticky rice and bubble tea: the finale you didn't expect.",
+  "Privacy":"Privacy","Informativa privacy":"Privacy notice","IL TUO ORDINE":"YOUR ORDER",
+  "FastWok è un concept demo: nessun dato lascia il tuo dispositivo. Bowl salvate, carrello e lingua vivono nel localStorage del browser.":"FastWok is a demo concept: no data leaves your device. Saved bowls, cart and language live in your browser's localStorage.",
+  "L'email che inserisci serve solo a etichettare le bowl su questo dispositivo: niente account, niente newsletter, niente cookie di profilazione.":"The email you enter only labels your bowls on this device: no account, no newsletter, no profiling cookies.",
+  "La mappa è incorporata da Google Maps ed è soggetta alla loro informativa privacy.":"The map is embedded from Google Maps and is subject to their privacy policy."
 };
 window.t = function(s){ return (window.I18N && window.I18N[s]) ? window.I18N[s] : s; };
 window.applyI18n = function(lang){
