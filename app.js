@@ -322,7 +322,7 @@
     udon: 'mix-04', jasmine: 'mix-01', 'brown-quinoa': 'ing2-rice',
     'veggie-mix': 'ing2-mixveg', konjac: 'ing2-enoki',
     /* proteine */
-    pollo: 'special-pollo-grigliato', teriyaki: 'snack-chicken-wings', karaage: 'pro-karaage',
+    pollo: 'special-pollo-grigliato', teriyaki: 'pro-teriyaki', karaage: 'pro-karaage',
     manzo: 'pro-manzo', 'char-siu': 'pro-char-siu', gamberi: 'ing2-shrimp',
     tofu: 'ing2-tofu', tempeh: 'pro-tempeh', edamame: 'pro-edamame', 'uovo-extra': 'ing2-egg',
     duck: 'pro-duck', pork: 'pro-pork', 'smoked-turkey': 'pro-smoked-turkey', calamari: 'pro-calamari',
