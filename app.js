@@ -334,14 +334,14 @@
     ananas: 'ing2-pineapple', carote: 'ing2-carrot',
     spinaci: 'ing2-spinaci', mango: 'ing2-mango', pomodorini: 'ing2-pomodorini',
     'cipolla-rossa': 'ing2-cipolla-rossa', 'germogli-bambu': 'ing2-germogli-bambu',
-    /* salse */
-    tokyo: 'top-sesamo', hongkong: 'top-arachidi', saigon: 'top-lime', beijing: 'top-aglio',
-    bangkok: 'top-coriandolo', seoul: 'top-sesamo', sichuan: 'top-jalapeno', kungpao: 'top-arachidi',
-    mango: 'top-lime', satay: 'top-arachidi', sweetchili: 'top-jalapeno', zero: 'ing2-greens',
-    cocco: 'ing2-tofu', 'curry-rosso': 'top-jalapeno', 'curry-verde': 'ing2-greens',
-    'curry-giallo': 'ing2-carrot', 'curry-giapponese': 'ing2-rice', massala: 'top-sesamo',
-    sriracha: 'top-jalapeno', hoisin: 'ing2-beef', unagi: 'ing2-shrimp', ponzu: 'top-lime',
-    tamarindo: 'top-lime', 'sesamo-miele': 'top-sesamo', yuzu: 'top-lime', shoyu: 'top-sesamo',
+    /* salse — foto vere di salse in ciotola */
+    tokyo: 'sauce-35428719', hongkong: 'sauce-18530640', saigon: 'sauce-13523793', beijing: 'sauce-7166546',
+    bangkok: 'sauce-17878229', seoul: 'sauce-37057285', sichuan: 'sauce-13651193', kungpao: 'sauce-8994915',
+    mango: 'sauce-3832350', satay: 'sauce-34318136', sweetchili: 'sauce-3832359', zero: 'sauce-5899677',
+    cocco: 'sauce-5899671', 'curry-rosso': 'sauce-19199222', 'curry-verde': 'sauce-5899675',
+    'curry-giallo': 'sauce-5899669', 'curry-giapponese': 'sauce-9685279', massala: 'sauce-17878229',
+    sriracha: 'sauce-13651193', hoisin: 'sauce-35428719', unagi: 'sauce-7166546', ponzu: 'sauce-13523793',
+    tamarindo: 'sauce-18530640', 'sesamo-miele': 'sauce-18354021', yuzu: 'sauce-5899677', shoyu: 'sauce-1385185',
     /* topping */
     sesamo: 'top-sesamo', 'cipolla-cr': 'top-cipolla', 'aglio-cr': 'top-aglio',
     arachidi: 'top-arachidi', anacardi: 'top-anacardi', coriandolo: 'top-coriandolo',
