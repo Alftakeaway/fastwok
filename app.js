@@ -301,24 +301,31 @@
 
   /* foto reali (Pexels, salvate in assets/) — una foto per famiglia di ingredienti */
   const PHOTOS = {
+    /* formati / zuppe */
     classic: 'mix-01', xl: 'mix-05', fit: 'mix-12', soup: 'mix-04',
-    miso: 'ing-noodles', lemongrass: 'ing-chili', umami: 'ing-beef',
-    'egg-noodles': 'ing-noodles', 'whole-wheat': 'ing-noodles', 'rice-noodles': 'ing-noodles',
-    udon: 'ing-noodles', jasmine: 'ing-noodles', 'brown-quinoa': 'ing-veggies',
-    'veggie-mix': 'ing-veggies', konjac: 'ing-veggies',
-    pollo: 'ing-chicken', teriyaki: 'ing-chicken', karaage: 'ing-chicken',
-    manzo: 'ing-beef', 'char-siu': 'ing-beef', gamberi: 'ing-shrimp',
-    tofu: 'ing-tofu', tempeh: 'ing-tofu', edamame: 'ing-veggies', 'uovo-extra': 'ing-eggs',
-    'pak-choi': 'ing-veggies', broccoli: 'ing-broccoli', champignon: 'ing-veggies',
-    shiitake: 'ing-veggies', peperoni: 'ing-veggies', 'baby-corn': 'ing-veggies',
-    germogli: 'ing-veggies', zucchine: 'ing-veggies', cipollotto: 'ing-veggies', ananas: 'ing-veggies', carote: 'ing-veggies',
-    tokyo: 'ing-noodles', hongkong: 'ing-chili', saigon: 'ing-chili', beijing: 'ing-noodles',
-    bangkok: 'ing-chili', seoul: 'ing-chili', sichuan: 'ing-chili', kungpao: 'ing-peanuts',
-    mango: 'ing-chili', satay: 'ing-peanuts', sweetchili: 'ing-chili', zero: 'ing-veggies',
-    cocco: 'ing-tofu', 'curry-rosso': 'ing-chili', 'curry-verde': 'ing-broccoli',
-    'curry-giallo': 'ing-tofu', 'curry-giapponese': 'ing-noodles', massala: 'ing-chili',
-    sriracha: 'ing-chili', hoisin: 'ing-beef', unagi: 'ing-shrimp', ponzu: 'ing-chili',
-    tamarindo: 'ing-chili', 'sesamo-miele': 'ing-peanuts', yuzu: 'ing-veggies', shoyu: 'ing-noodles',
+    miso: 'ing2-rice', lemongrass: 'top-lime', umami: 'ing2-beef',
+    /* basi */
+    'egg-noodles': 'mix-08', 'whole-wheat': 'mix-11', 'rice-noodles': 'mix-17',
+    udon: 'mix-04', jasmine: 'mix-01', 'brown-quinoa': 'ing2-rice',
+    'veggie-mix': 'ing2-mixveg', konjac: 'ing2-enoki',
+    /* proteine */
+    pollo: 'ing2-chicken', teriyaki: 'ing2-chicken', karaage: 'ing2-chicken',
+    manzo: 'ing2-beef', 'char-siu': 'ing2-beef', gamberi: 'ing2-shrimp',
+    tofu: 'ing2-tofu', tempeh: 'ing2-tofu', edamame: 'ing2-greens', 'uovo-extra': 'ing2-egg',
+    /* verdure */
+    'pak-choi': 'ing2-bokchoy', broccoli: 'ing2-greens', champignon: 'ing2-champignon',
+    shiitake: 'ing2-shiitake', peperoni: 'ing2-mixveg', 'baby-corn': 'ing2-mixveg',
+    germogli: 'ing2-greens', zucchine: 'ing2-greens', cipollotto: 'ing2-greens',
+    ananas: 'ing2-pineapple', carote: 'ing2-carrot',
+    /* salse */
+    tokyo: 'top-sesamo', hongkong: 'top-arachidi', saigon: 'top-lime', beijing: 'top-aglio',
+    bangkok: 'top-coriandolo', seoul: 'top-sesamo', sichuan: 'top-jalapeno', kungpao: 'top-arachidi',
+    mango: 'top-lime', satay: 'top-arachidi', sweetchili: 'top-jalapeno', zero: 'ing2-greens',
+    cocco: 'ing2-tofu', 'curry-rosso': 'top-jalapeno', 'curry-verde': 'ing2-greens',
+    'curry-giallo': 'ing2-carrot', 'curry-giapponese': 'ing2-rice', massala: 'top-sesamo',
+    sriracha: 'top-jalapeno', hoisin: 'ing2-beef', unagi: 'ing2-shrimp', ponzu: 'top-lime',
+    tamarindo: 'top-lime', 'sesamo-miele': 'top-sesamo', yuzu: 'top-lime', shoyu: 'top-sesamo',
+    /* topping */
     sesamo: 'top-sesamo', 'cipolla-cr': 'top-cipolla', 'aglio-cr': 'top-aglio',
     arachidi: 'top-arachidi', anacardi: 'top-anacardi', coriandolo: 'top-coriandolo',
     lime: 'top-lime', nori: 'top-nori', jalapenos: 'top-jalapeno', 'zenzero-rosa': 'top-zenzero'
