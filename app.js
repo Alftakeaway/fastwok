@@ -68,7 +68,25 @@
     { id: 'mango', name: 'Mango Habanero', sub: 'Dolce & fuoco', icon: '🥭', price: 0.6, kcal: 90, pro: 0, carbs: 20, fat: 1, allergens: [], group: 'special' },
     { id: 'satay', name: 'Satay', sub: 'Crema d’arachidi', icon: '🥜', price: 0.6, kcal: 150, pro: 4, carbs: 8, fat: 12, allergens: ['arachidi', 'soia'], group: 'special' },
     { id: 'sweetchili', name: 'Sweet Chili', sub: 'Dolce piccante', icon: '🌶️', price: 0, kcal: 70, pro: 0, carbs: 17, fat: 0, allergens: [], group: 'special' },
-    { id: 'zero', name: 'Zero Salsa', sub: 'Al naturale', icon: '✨', price: 0, kcal: 0, pro: 0, carbs: 0, fat: 0, allergens: [], group: 'special' }
+    { id: 'zero', name: 'Zero Salsa', sub: 'Al naturale', icon: '✨', price: 0, kcal: 0, pro: 0, carbs: 0, fat: 0, allergens: [], group: 'special' },
+
+    /* ---- Cocco & Curry ---- */
+    { id: 'cocco', name: 'Cocco Cream', sub: 'Latte di cocco, lime, coriandolo', icon: '🥥', price: 0.6, kcal: 120, pro: 1, carbs: 6, fat: 11, allergens: [], group: 'curry' },
+    { id: 'curry-rosso', name: 'Bangkok Rosso', sub: 'Curry rosso thai', icon: '🌶️', price: 0.5, kcal: 130, pro: 2, carbs: 8, fat: 11, allergens: [], group: 'curry' },
+    { id: 'curry-verde', name: 'Green Curry', sub: 'Curry verde e basilico', icon: '🍛', price: 0.5, kcal: 120, pro: 2, carbs: 7, fat: 10, allergens: [], group: 'curry' },
+    { id: 'curry-giallo', name: 'Mandarino', sub: 'Curry giallo e cocco', icon: '🟡', price: 0.5, kcal: 125, pro: 1, carbs: 9, fat: 10, allergens: [], group: 'curry' },
+    { id: 'curry-giapponese', name: 'Tokyo Curry', sub: 'Curry giapponese dolce', icon: '🍛', price: 0.5, kcal: 110, pro: 2, carbs: 14, fat: 5, allergens: ['glutine'], group: 'curry' },
+    { id: 'massala', name: 'Bombay Massala', sub: 'Curry massala speziato', icon: '🇮🇳', price: 0.6, kcal: 120, pro: 2, carbs: 8, fat: 9, allergens: [], group: 'curry' },
+
+    /* ---- Altre salse asiatiche ---- */
+    { id: 'sriracha', name: 'Saigon Fire', sub: 'Sriracha e lime', icon: '🌶️', price: 0.4, kcal: 45, pro: 0, carbs: 8, fat: 1, allergens: [], group: 'special' },
+    { id: 'hoisin', name: 'Canton Hoisin', sub: 'Dolce, densa, umami', icon: '🐉', price: 0.4, kcal: 80, pro: 1, carbs: 18, fat: 0, allergens: ['soia', 'glutine'], group: 'special' },
+    { id: 'unagi', name: 'Unagi Glaze', sub: 'Salsa di anguilla dolce', icon: '🍢', price: 0.6, kcal: 90, pro: 1, carbs: 20, fat: 0, allergens: ['soia', 'pesce'], group: 'special' },
+    { id: 'ponzu', name: 'Osaka Ponzu', sub: 'Agrumi e soia', icon: '🍋', price: 0.4, kcal: 30, pro: 1, carbs: 5, fat: 0, allergens: ['soia'], group: 'special' },
+    { id: 'tamarindo', name: 'Mumbai Tamarindo', sub: 'Agro e piccante', icon: '🥭', price: 0.4, kcal: 50, pro: 0, carbs: 12, fat: 0, allergens: [], group: 'special' },
+    { id: 'sesamo-miele', name: 'Seoul Sesamo', sub: 'Sesamo tostato e miele', icon: '🍯', price: 0.5, kcal: 100, pro: 1, carbs: 16, fat: 3, allergens: ['sesamo'], group: 'special' },
+    { id: 'yuzu', name: 'Kyoto Yuzu', sub: 'Agrume giapponese', icon: '🍊', price: 0.5, kcal: 40, pro: 0, carbs: 9, fat: 0, allergens: [], group: 'special' },
+    { id: 'shoyu', name: 'Shoyu Classic', sub: 'Salsa di soia', icon: '🥢', price: 0, kcal: 25, pro: 2, carbs: 3, fat: 0, allergens: ['soia', 'glutine'], group: 'classic' }
   ];
 
   const SPICE = [
@@ -86,7 +104,9 @@
     { id: 'anacardi', name: 'Anacardi', icon: '🌰', price: 0.9, kcal: 70, pro: 2, carbs: 4, fat: 6, allergens: ['frutta a guscio'] },
     { id: 'coriandolo', name: 'Coriandolo fresco', icon: '🌿', price: 0, kcal: 5, pro: 0, carbs: 1, fat: 0, allergens: [] },
     { id: 'lime', name: 'Lime fresco', icon: '🍋', price: 0.3, kcal: 5, pro: 0, carbs: 1, fat: 0, allergens: [] },
-    { id: 'nori', name: 'Alghe Nori', icon: '🌊', price: 0.6, kcal: 10, pro: 1, carbs: 1, fat: 0, allergens: [] }
+    { id: 'nori', name: 'Alghe Nori', icon: '🌊', price: 0.6, kcal: 10, pro: 1, carbs: 1, fat: 0, allergens: [] },
+    { id: 'jalapenos', name: 'Jalapeños', icon: '🌶️', price: 0.5, kcal: 10, pro: 0, carbs: 2, fat: 0, allergens: [] },
+    { id: 'zenzero-rosa', name: 'Zenzero Rosa', icon: '🌸', price: 0.6, kcal: 15, pro: 0, carbs: 4, fat: 0, allergens: [] }
   ];
 
   const SIGNATURES = [
@@ -277,7 +297,7 @@
     { id: 'birra-asia', name: 'Birra asiatica', sub: 'Lager / rice beer', emoji: '🍺', price: 4.5, tag: '18+', flags: ['glutine'] },
     { id: 'soft', name: 'Soft drink', sub: 'Classici e orientali', emoji: '🥤', price: 2.5, tag: 'FIZZY', flags: [] }
   ];
-  const ALLERGENS = ['glutine', 'soia', 'uova', 'crostacei', 'arachidi', 'frutta a guscio', 'sesamo'];
+  const ALLERGENS = ['glutine', 'soia', 'uova', 'crostacei', 'pesce', 'arachidi', 'frutta a guscio', 'sesamo'];
 
   /* foto reali (Pexels, salvate in assets/) — una foto per famiglia di ingredienti */
   const PHOTOS = {
@@ -295,9 +315,13 @@
     tokyo: 'ing-noodles', hongkong: 'ing-chili', saigon: 'ing-chili', beijing: 'ing-noodles',
     bangkok: 'ing-chili', seoul: 'ing-chili', sichuan: 'ing-chili', kungpao: 'ing-peanuts',
     mango: 'ing-chili', satay: 'ing-peanuts', sweetchili: 'ing-chili', zero: 'ing-veggies',
-    sesamo: 'ing-peanuts', 'cipolla-cr': 'ing-veggies', 'aglio-cr': 'ing-veggies',
-    arachidi: 'ing-peanuts', anacardi: 'ing-peanuts', coriandolo: 'ing-veggies',
-    lime: 'ing-veggies', nori: 'ing-veggies'
+    cocco: 'ing-tofu', 'curry-rosso': 'ing-chili', 'curry-verde': 'ing-broccoli',
+    'curry-giallo': 'ing-tofu', 'curry-giapponese': 'ing-noodles', massala: 'ing-chili',
+    sriracha: 'ing-chili', hoisin: 'ing-beef', unagi: 'ing-shrimp', ponzu: 'ing-chili',
+    tamarindo: 'ing-chili', 'sesamo-miele': 'ing-peanuts', yuzu: 'ing-veggies', shoyu: 'ing-noodles',
+    sesamo: 'top-sesamo', 'cipolla-cr': 'top-cipolla', 'aglio-cr': 'top-aglio',
+    arachidi: 'top-arachidi', anacardi: 'top-anacardi', coriandolo: 'top-coriandolo',
+    lime: 'top-lime', nori: 'top-nori', jalapenos: 'top-jalapeno', 'zenzero-rosa': 'top-zenzero'
   };
   const SIG_PHOTOS = {
     'trastevere-fire': 'brand-fire.webp', 'gym-bro': 'mix-06.jpg',
@@ -389,6 +413,30 @@
   let bitesTab = 'food';
   let cart = [];
   let activeFilters = new Set();
+  let quickFilters = new Set();
+  let lang = 'it';
+  try { lang = localStorage.getItem('fw-lang') || 'it'; } catch (e) {}
+
+  /* icone SVG coerenti (niente emoji nell'UI) */
+  const ICONS = {
+    cart: '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.5 12h11L21 7H6"/>',
+    dice: '<rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1"/><circle cx="15.5" cy="8.5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="8.5" cy="15.5" r="1"/><circle cx="15.5" cy="15.5" r="1"/>',
+    infinity: '<path d="M6.5 8c-3 0-4.5 2-4.5 4s1.5 4 4.5 4c4 0 5.5-8 11-8 3 0 4.5 2 4.5 4s-1.5 4-4.5 4c-4 0-5.5-8-11-8z"/>',
+    leaf: '<path d="M20 4C11 4 5 9 5 16c0 2 1 4 1 4s8-1 12-6c3-4 2-10 2-10z"/><path d="M4 21c2-5 6-9 11-12"/>',
+    shield: '<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/>',
+    bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+    flame: '<path d="M12 22c4 0 7-3 7-7 0-4-3-6-4-9 0 3-2 4-3 5-1-2-1-4-1-6-3 3-6 6-6 10 0 4 3 7 7 7z"/>',
+    heart: '<path d="M20.8 5.6a5 5 0 00-7.1 0L12 7.3l-1.7-1.7a5 5 0 00-7.1 7.1L12 21l8.8-8.3a5 5 0 000-7.1z"/>',
+    pin: '<path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>'
+  };
+  function iconSvg(name) {
+    return '<svg viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[name] || ICONS.flame) + '</svg>';
+  }
+  function hydrateIcons() {
+    $$('.ico[data-icon]').forEach(el => { if (!el.dataset.done) { el.innerHTML = iconSvg(el.dataset.icon); el.dataset.done = '1'; } });
+  }
+  function tr(s) { return lang === 'en' && window.t ? window.t(s) : s; }
 
   /* ---------------- HELPERS ---------------- */
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -461,7 +509,7 @@
     const flags = [];
     if (it.gf) flags.push('<span class="flag gf">GF</span>');
     if (it.vegan) flags.push('<span class="flag">VEGAN</span>');
-    if (it.sub) flags.push('<span class="flag">' + esc(it.sub) + '</span>');
+    if (it.sub) flags.push('<span class="flag">' + esc(tr(it.sub)) + '</span>');
     const photo = PHOTOS[it.id] || (kind === 'spice' && it.id > 0 ? 'ing-chili' : null);
     const ico = photo
       ? `<span class="opt-ico"><img class="opt-img" src="assets/${photo}.jpg" alt="" loading="lazy" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'"><span class="opt-emoji">${it.icon || ''}</span></span>`
@@ -469,9 +517,9 @@
     return `<button class="opt${selected ? ' selected' : ''}" data-kind="${kind}" data-id="${esc(it.id)}" aria-pressed="${selected}">
       ${it.tag ? `<span class="opt-tag">${esc(it.tag)}</span>` : ''}
       ${ico}
-      <span class="opt-name">${esc(it.name)}</span>
+      <span class="opt-name">${esc(tr(it.name))}</span>
       ${flags.length ? `<span class="opt-flags">${flags.join('')}</span>` : ''}
-      <span class="opt-price">${it.price ? '+' + money(it.price) : 'incluso'}</span>
+      <span class="opt-price">${it.price ? '+' + money(it.price) : tr('incluso')}</span>
     </button>`;
   }
   function isSel(kind, id) {
@@ -526,7 +574,7 @@
       <div class="mbar" title="Grassi"><i style="width:${Math.min(100, r.fat * 3)}%;background:var(--lime)"></i></div>`;
     $('#spiceDisplay').innerHTML = `<span class="sl">${esc(r.spice.name.toUpperCase())}</span>` +
       [0, 1, 2].map(i => `<span class="sf${state.spice >= i + 1 ? ' on' : ''}">🔥</span>`).join('');
-    $('#dietBadges').innerHTML = r.badges.length ? r.badges.map(b => `<span class="badge ${b.cls}">${b.text}</span>`).join('') : '<span class="none" style="font-size:.75rem;color:var(--muted)">Nessun badge</span>';
+    $('#dietBadges').innerHTML = r.badges.length ? r.badges.map(b => `<span class="badge ${b.cls}">${esc(tr(b.text))}</span>`).join('') : '<span class="none" style="font-size:.75rem;color:var(--muted)">' + tr('Nessun badge') + '</span>';
     $('#allergenChips').innerHTML = r.allergens.size
       ? Array.from(r.allergens).map(a => `<span class="allergen-chip">⚠ ${esc(a)}</span>`).join('')
       : '<span class="none">Nessuno rilevato</span>';
@@ -554,9 +602,13 @@
       const i = +li.dataset.goto;
       li.classList.toggle('active', i === currentStep);
       li.classList.toggle('done', i < currentStep);
+      const lbl = li.querySelector('.step-label');
+      if (lbl && !lbl.dataset.base) lbl.dataset.base = lbl.textContent;
+      if (lbl) lbl.textContent = (i + 1) + '/5 · ' + tr(lbl.dataset.base || lbl.textContent);
     });
+    const fill = $('#stepProgressFill'); if (fill) fill.style.width = ((currentStep + 1) * 20) + '%';
     $('#prevStep').disabled = currentStep === 0;
-    $('#nextStep').textContent = currentStep === 4 ? '✅ Ho finito' : 'Avanti →';
+    $('#nextStep').textContent = currentStep === 4 ? tr('✅ Ho finito') : tr('Avanti') + ' →';
   }
 
   /* ---------------- SELECTION ---------------- */
@@ -573,9 +625,10 @@
         if (id === 'zero') { state.sauces = ['zero']; }
         else {
           state.sauces = state.sauces.filter(s => s !== 'zero');
-          if (idx >= 0) arr.splice(idx, 1);
-          else if (arr.length >= 2) { toast('Max 2 salse per il mashup! 🔥', '⚠️'); return; }
-          else arr.push(id);
+          const i2 = state.sauces.indexOf(id);
+          if (i2 >= 0) state.sauces.splice(i2, 1);
+          else if (state.sauces.length >= 2) { toast('Max 2 salse per il mashup! 🔥', '⚠️'); return; }
+          else state.sauces.push(id);
         }
       } else {
         if (idx >= 0) arr.splice(idx, 1); else arr.push(id);
@@ -626,9 +679,9 @@
   /* ---------------- SIGNATURES ---------------- */
   function renderSignatures() {
     $('#signatureGrid').innerHTML = SIGNATURES.map(s => `<article class="sig-card" data-sig="${s.id}">
-      <div class="sig-top"><span class="sig-photo-wrap"><img src="assets/${SIG_PHOTOS[s.id]}" alt="${esc(s.name)}" loading="lazy"><span class="sig-photo-emoji">${s.emoji}</span></span><div><div class="sig-title">${esc(s.name)}</div><span class="sig-tag ${s.tagClass}">${esc(s.tag)}</span></div></div>
-      <p class="sig-desc">${esc(s.desc)}</p>
-      <div class="sig-tags">${s.chips.map(c => `<span>${esc(c)}</span>`).join('')}</div>
+      <div class="sig-top"><span class="sig-photo-wrap"><img src="assets/${SIG_PHOTOS[s.id]}" alt="${esc(tr(s.name))}" loading="lazy"><span class="sig-photo-emoji">${s.emoji}</span></span><div><div class="sig-title">${esc(tr(s.name))}</div><span class="sig-tag ${s.tagClass}">${esc(tr(s.tag))}</span></div></div>
+      <p class="sig-desc">${esc(tr(s.desc))}</p>
+      <div class="sig-tags">${s.chips.map(c => `<span>${esc(tr(c))}</span>`).join('')}</div>
       <div class="sig-bottom"><span class="sig-price">${money(s.price)}</span>
         <div class="sig-actions">
           <button class="btn btn-outline" data-act="customize" data-id="${s.id}">Personalizza</button>
@@ -646,7 +699,7 @@
       return `<article class="bite" data-id="${b.id}" data-flags="${(b.flags || []).join(',')}">
         <span class="bite-tag${hot ? ' hot' : ''}">${esc(b.tag)}</span>
         <div class="bite-photo">${imgTag(BITE_PHOTOS[b.id], '', '')}</div>
-        <h4>${esc(b.name)}</h4><p>${esc(b.sub)}</p>
+        <h4>${esc(tr(b.name))}</h4><p>${esc(tr(b.sub))}</p>
         <div class="bite-flags">${(b.flags || []).map(f => `<span>⚠ ${esc(f)}</span>`).join('')}</div>
         <div class="bite-foot"><span class="bite-price">${money(b.price)}</span>
           <button class="bite-add" data-act="bite" data-id="${b.id}" aria-label="Aggiungi ${esc(b.name)}">+</button>
@@ -686,21 +739,25 @@
 
   /* ---------------- CART ---------------- */
   function addCart(item) {
+    item.qty = item.qty || 1;
     cart.push(item);
-    renderCart();
-    toast(item.name + ' aggiunto al carrello! 🛒', '✅');
+    saveCart(); renderCart();
+    toast(item.name + ' ' + tr('aggiunto al carrello!') , '✅');
   }
   function renderCart() {
-    $('#cartCount').textContent = cart.length;
-    const total = cart.reduce((s, i) => s + i.price, 0);
+    const count = cart.reduce((s, i) => s + (i.qty || 1), 0);
+    $('#cartCount').textContent = count;
+    const total = cart.reduce((s, i) => s + i.price * (i.qty || 1), 0);
     $('#cartTotal').textContent = money(Math.round(total * 100) / 100);
     $('#cartItems').innerHTML = cart.length
       ? cart.map((it, i) => `<div class="cart-item">
           <button class="ci-remove" data-remove="${i}" aria-label="Rimuovi">✕</button>
           <h4>${esc(it.name)}</h4><div class="ci-meta">${esc(it.meta || 'Wok personalizzato')}</div>
-          <span class="ci-price">${money(it.price)}</span>
+          <div class="cart-item-line"><span class="ci-price">${money(it.price * (it.qty || 1))}</span>
+            <span class="qty"><button data-qty="${i}" data-d="-1" aria-label="Meno">−</button><span>${it.qty || 1}</span><button data-qty="${i}" data-d="1" aria-label="Più">+</button></span>
+          </div>
         </div>`).join('')
-      : '<p class="empty-cart">Carrello vuoto. Ma non per lungo… 🔥</p>';
+      : '<p class="empty-cart">' + tr('Carrello vuoto. Ma non per lungo… 🔥') + '</p>';
   }
   function openCart() {
     $('#cartDrawer').classList.add('open');
@@ -713,6 +770,116 @@
     $('#cartDrawer').setAttribute('aria-hidden', 'true');
     $('#drawerBackdrop').classList.remove('show');
     setTimeout(() => { $('#drawerBackdrop').hidden = true; }, 300);
+  }
+
+  /* ---------------- SWEETS & DRINKS ---------------- */
+  const SWEETS = [
+    { id: 'sw-mango', name: 'Mango Sticky Rice', sub: 'Riso glutinoso, mango e cocco', price: 5.5, photo: 'snack-mango-sticky', cat: 'Dolci', flags: [] },
+    { id: 'sw-pisang', name: 'Pisang Goreng', sub: 'Banana fritta croccante', price: 4.5, photo: 'snack-pisang-goreng', cat: 'Dolci', flags: ['glutine'] },
+    { id: 'sw-bubble', name: 'Bubble Tea', sub: 'Taro / mango / matcha', price: 5.5, photo: 'drink-bubble-tea', cat: 'Bevande', flags: [] },
+    { id: 'sw-tea', name: 'Tè freddo thai', sub: 'Asiatico, 4 gusti', price: 3.5, photo: 'drink-te-freddo', cat: 'Bevande', flags: [] },
+    { id: 'sw-beer', name: 'Birra asiatica', sub: 'Lager / rice beer', price: 4.5, photo: 'drink-birra', cat: 'Bevande', flags: ['glutine'] },
+    { id: 'sw-soft', name: 'Soft drink', sub: 'Classici e orientali', price: 2.5, photo: 'drink-soft', cat: 'Bevande', flags: [] }
+  ];
+  function renderSweets() {
+    const el = $('#sweetsGrid'); if (!el) return;
+    el.innerHTML = SWEETS.map(s => `<article class="sweet" data-flags="${(s.flags||[]).join(',')}">
+      <img src="assets/${s.photo}.jpg" alt="${esc(tr(s.name))}" loading="lazy">
+      <div class="sweet-body">
+        <span class="sig-tag ${s.cat === 'Dolci' ? 'green' : ''}">${tr(s.cat)}</span>
+        <h4>${esc(tr(s.name))}</h4><p>${esc(tr(s.sub))}</p>
+        <div class="sweet-foot"><span class="sweet-price">${money(s.price)}</span>
+          <button class="bite-add" data-act="sweet" data-id="${s.id}" aria-label="Aggiungi ${esc(tr(s.name))}">+</button>
+        </div>
+      </div>
+    </article>`).join('');
+  }
+
+  /* ---------------- QUICK FILTERS ---------------- */
+  const NON_HALAL = ['char-siu', 'unagi', 'hoisin'];
+  function optionAllowed(kind, it) {
+    if (quickFilters.has('vegan')) {
+      if (it.animal || it.meatFish) return false;
+      if (kind === 'base' && it.id === 'egg-noodles') return false;
+    }
+    if (quickFilters.has('halal') && NON_HALAL.indexOf(it.id) >= 0) return false;
+    if (quickFilters.has('protein') && kind === 'protein' && (it.pro || 0) < 10) return false;
+    if (quickFilters.has('lowcarb') && kind === 'base' && (it.carbs || 0) > 20) return false;
+    return true;
+  }
+  function applyQuickFilters() {
+    $$('#signatureGrid .sig-card').forEach(card => {
+      const s = get(SIGNATURES, card.dataset.sig); if (!s) return;
+      const r = calc(s.config);
+      let ok = true;
+      if (quickFilters.has('vegan') && !r.badges.some(b => b.cls === 'vegan')) ok = false;
+      if (quickFilters.has('protein') && r.pro < 35) ok = false;
+      if (quickFilters.has('lowcarb') && r.carbs >= 35) ok = false;
+      if (quickFilters.has('halal')) {
+        const bad = s.config.proteins.some(id => NON_HALAL.indexOf(id) >= 0) ||
+                    s.config.sauces.some(id => NON_HALAL.indexOf(id) >= 0) ||
+                    s.config.toppings.some(id => NON_HALAL.indexOf(id) >= 0);
+        if (bad) ok = false;
+      }
+      card.classList.toggle('filtered-out', !ok);
+    });
+    $$('#step0-formats .opt, #step0-soups .opt, #step1-bases .opt, #step2-proteins .opt, #step2-veggies .opt, #step3-sauces .opt, #step4-toppings .opt').forEach(el => {
+      const kind = el.dataset.kind, id = el.dataset.id;
+      const list = kind === 'format' ? FORMATS : kind === 'soup' ? SOUPS : kind === 'base' ? BASES :
+                   kind === 'protein' ? PROTEINS : kind === 'veggie' ? VEGGIES : kind === 'sauce' ? SAUCES : TOPPINGS;
+      const it = get(list, id);
+      el.classList.toggle('filtered-out', !!(it && !optionAllowed(kind, it)));
+    });
+  }
+
+  /* ---------------- SAVED BOWLS ---------------- */
+  function savedStore() {
+    try { return JSON.parse(localStorage.getItem('fw-saved') || '{}'); } catch (e) { return {}; }
+  }
+  function savedEmail() { return ($('#savedEmail') && $('#savedEmail').value.trim().toLowerCase()) || ''; }
+  function saveCurrentBowl() {
+    const email = savedEmail();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { toast(tr('Inserisci la tua email'), '⚠️'); return; }
+    const store = savedStore();
+    const list = store[email] || [];
+    const nm = state.name.trim() || ('Bowl ' + (list.length + 1));
+    list.unshift({ id: 'b' + Date.now(), name: nm, cfg: clone(state), price: calc().price });
+    store[email] = list.slice(0, 20);
+    try { localStorage.setItem('fw-saved', JSON.stringify(store)); } catch (e) {}
+    renderSaved(); toast(tr('Bowl salvata! 💾'), '✅');
+  }
+  function renderSaved() {
+    const el = $('#savedList'); if (!el) return;
+    const email = savedEmail();
+    const list = email ? (savedStore()[email] || []) : [];
+    el.innerHTML = list.length
+      ? list.map(b => `<div class="saved-item">
+          <span class="si-emoji">🥡</span>
+          <div class="si-info"><strong>${esc(b.name)}</strong><small>${money(b.price)} · ${tr('La tua Wok')}</small></div>
+          <button data-act="reorder" data-id="${b.id}">${tr('Riordina')}</button>
+          <button class="si-del" data-act="delsaved" data-id="${b.id}" aria-label="Elimina">✕</button>
+        </div>`).join('')
+      : `<div class="saved-empty">${tr('Nessuna bowl salvata. Crea la tua combinazione nel builder e salvala qui.')}</div>`;
+  }
+  function reorderSaved(id) {
+    const email = savedEmail(); const list = (savedStore()[email] || []);
+    const b = list.find(x => x.id === id); if (!b) return;
+    state = clone(b.cfg); $('#bowlName').value = state.name;
+    renderAllOptions(); renderSummary(); goStep(0);
+    const r = calc();
+    addCart({ name: state.name || 'Bowl', price: r.price, meta: r.fmt.name + ' · ' + r.spice.name });
+    $('#builder').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ---------------- CART PERSISTENCE ---------------- */
+  function loadCart() {
+    try { cart = JSON.parse(localStorage.getItem('fw-cart') || '[]'); } catch (e) { cart = []; }
+  }
+  function saveCart() { try { localStorage.setItem('fw-cart', JSON.stringify(cart)); } catch (e) {} }
+  function changeQty(i, d) {
+    if (!cart[i]) return;
+    cart[i].qty = Math.max(1, (cart[i].qty || 1) + d);
+    renderCart();
   }
 
   /* ---------------- LIGHTBOX / ZOOM ---------------- */
@@ -766,7 +933,7 @@
     $('#lbImage').alt = img.alt || 'Piatto FastWok';
     $('#lbCaption').textContent = lbCaption(img);
     const d = lbDetails(img);
-    $('#lbIngredients').innerHTML = d.items.map((n, k) => `<span style="animation-delay:${k * 35}ms">${esc(n)}</span>`).join('');
+    $('#lbIngredients').innerHTML = d.items.map((n, k) => `<span style="animation-delay:${k * 35}ms">${esc(tr(n))}</span>`).join('');
     $('#lbAllergens').textContent = d.allergens.length ? '⚠ Allergeni: ' + d.allergens.join(', ') : '✓ Nessun allergene dichiarato';
   }
   function openLightbox(img) {
@@ -828,7 +995,25 @@
   /* ---------------- EVENTS ---------------- */
   function bindEvents() {
     document.addEventListener('click', e => {
-      const zoom = e.target.closest('.hero-photo, .sig-photo-wrap img, .bite-photo img, .sig-gallery img');
+      const langBtn = e.target.closest('[data-lang]');
+      if (langBtn) {
+        lang = langBtn.dataset.lang;
+        $$('.lang-switch button').forEach(b => b.classList.toggle('active', b === langBtn));
+        window.applyI18n(lang); hydrateIcons();
+        renderAllOptions(); renderSignatures(); renderBites(); renderSweets(); renderSaved(); renderSummary(); goStep(currentStep); applyQuickFilters();
+        return;
+      }
+      const qf = e.target.closest('[data-qf]');
+      if (qf) {
+        const k = qf.dataset.qf;
+        if (quickFilters.has(k)) quickFilters.delete(k); else quickFilters.add(k);
+        qf.classList.toggle('active', quickFilters.has(k));
+        applyQuickFilters();
+        return;
+      }
+      const qbtn = e.target.closest('[data-qty]');
+      if (qbtn) { changeQty(+qbtn.dataset.qty, +qbtn.dataset.d); saveCart(); return; }
+      const zoom = e.target.closest('.hero-photo, .sig-photo-wrap img, .bite-photo img, .sig-gallery img, .sweet img');
       if (zoom) { e.preventDefault(); e.stopPropagation(); openLightbox(zoom); return; }
       if (e.target.closest('#lbClose')) { closeLightbox(); return; }
       if (e.target.closest('#lbPrev')) { showLb(lbIndex - 1); return; }
@@ -860,14 +1045,23 @@
       }
 
       const rem = e.target.closest('[data-remove]');
-      if (rem) { cart.splice(+rem.dataset.remove, 1); renderCart(); return; }
+      if (rem) { cart.splice(+rem.dataset.remove, 1); saveCart(); renderCart(); return; }
 
       const act = e.target.closest('[data-act]');
       if (act) {
         const id = act.dataset.id, a = act.dataset.act;
         if (a === 'bite') {
           const b = get(BITES_FOOD, id) || get(BITES_DRINK, id);
-          addCart({ name: b.name, price: b.price, meta: 'Street bite · ' + b.sub });
+          addCart({ name: tr(b.name), price: b.price, meta: tr('Street bite') + ' · ' + tr(b.sub) });
+        } else if (a === 'sweet') {
+          const s = SWEETS.find(x => x.id === id);
+          addCart({ name: tr(s.name), price: s.price, meta: tr(s.cat) });
+        } else if (a === 'reorder') {
+          reorderSaved(id);
+        } else if (a === 'delsaved') {
+          const email = savedEmail(), store = savedStore();
+          if (store[email]) { store[email] = store[email].filter(x => x.id !== id); try { localStorage.setItem('fw-saved', JSON.stringify(store)); } catch (err) {} }
+          renderSaved(); toast(tr('Bowl rimossa'), '🗑️');
         } else if (a === 'order') {
           const s = get(SIGNATURES, id);
           addCart({ name: s.name, price: s.price, meta: 'Signature Bowl · ' + s.tag });
@@ -898,6 +1092,7 @@
         closeSummaryOnMobile(); return;
       }
       if (e.target.closest('#shareBowl')) { shareBowl(); return; }
+      if (e.target.closest('#saveCurrentBowl')) { saveCurrentBowl(); return; }
       if (e.target.closest('#cartBtn')) { openCart(); return; }
       if (e.target.closest('#cartClose') || e.target.closest('#drawerBackdrop')) { closeCart(); return; }
       if (e.target.closest('#checkoutBtn')) {
@@ -941,15 +1136,24 @@
 
   /* ---------------- INIT ---------------- */
   function init() {
+    if (window.applyI18n) window.applyI18n(lang);
+    $$('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    hydrateIcons();
+    loadCart();
     renderAllOptions();
     renderSummary();
     goStep(0);
     renderSignatures();
     renderBites();
+    renderSweets();
+    renderSaved();
     renderFilters();
     renderCart();
+    applyQuickFilters();
     bindEvents();
     initReveal();
+    const se = $('#savedEmail');
+    if (se) se.addEventListener('input', renderSaved);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

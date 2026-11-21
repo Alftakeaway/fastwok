@@ -21,17 +21,18 @@
       <span class="logo-word">FAST<span>WOK</span></span>
     </a>
     <nav class="main-nav" aria-label="Navigazione principale">
-      <a href="#builder">Il Builder</a>
-      <a href="#signature">Signature</a>
-      <a href="#bites">Street Bites</a>
-      <a href="#info">Dove siamo</a>
+      <a href="#builder" data-i18n="Il Builder">Il Builder</a>
+      <a href="#signature" data-i18n="Signature">Signature</a>
+      <a href="#bites" data-i18n="Street Bites">Street Bites</a>
+      <a href="#info" data-i18n="Dove siamo">Dove siamo</a>
     </nav>
     <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Lingua"><button type="button" data-lang="it" class="active">IT</button><button type="button" data-lang="en">EN</button></div>
       <button class="cart-btn" id="cartBtn" aria-label="Apri carrello">
-        <span aria-hidden="true">🛒</span>
+        <i class="ico" data-icon="cart" aria-hidden="true"></i>
         <span class="cart-count" id="cartCount">0</span>
       </button>
-      <a class="btn btn-lime header-cta" href="#builder">Crea la tua bowl <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-lime header-cta" href="#builder" data-i18n="Crea la tua bowl">Crea la tua bowl <span aria-hidden="true">↗</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -53,12 +54,12 @@
       <p class="hero-lead">Fiamma viva, zero attese, <strong>100% tuo.</strong> Il wok saltato al volo che ti mette il pranzo in mano in 7 minuti. Scegli tutto, impazzisci un po', scappa col botto.</p>
       <div class="hero-ctas">
         <a class="btn btn-flame btn-lg" href="#builder">Crea la tua Bowl <span aria-hidden="true">→</span></a>
-        <button class="btn btn-ghost btn-lg" id="heroSurprise"><span aria-hidden="true">🎲</span> Sorprendimi</button>
+        <button class="btn btn-ghost btn-lg" id="heroSurprise"><i class="ico" data-icon="dice" aria-hidden="true"></i> <span data-i18n="Sorprendimi">Sorprendimi</span></button>
       </div>
       <div class="hero-stats">
-        <div class="stat"><strong>7′</strong><span>ritiro express</span></div>
-        <div class="stat"><strong>12+</strong><span>salse & mix</span></div>
-        <div class="stat"><strong>∞</strong><span>combos possibili</span></div>
+        <div class="stat"><strong>7′</strong><span data-i18n="ritiro express">ritiro express</span></div>
+        <div class="stat"><strong>12+</strong><span data-i18n="Salse &amp; mix">salse & mix</span></div>
+        <div class="stat"><i class="ico ico-stat" data-icon="infinity" aria-hidden="true"></i><span data-i18n="combos possibili">combos possibili</span></div>
       </div>
     </div>
 
@@ -103,6 +104,7 @@
     <div class="builder-layout">
       <div class="builder-main">
         <!-- STEPPER -->
+        <div class="step-progress" aria-hidden="true"><div class="step-progress-fill" id="stepProgressFill"></div></div>
         <ol class="stepper" id="stepper" aria-label="Passaggi del configuratore">
           <li class="active" data-goto="0"><span class="step-num">01</span><span class="step-label">Formato</span></li>
           <li data-goto="1"><span class="step-num">02</span><span class="step-label">Base</span></li>
@@ -145,8 +147,9 @@
           <div class="step-panel" data-step="3">
             <div class="step-head"><span class="step-index">STEP 04</span><h3>Salse & piccantezza</h3><p>Il cuore del gusto. Prendi una salsa, o fa' il mashup con due. Poi scegli quanto bruciare.</p></div>
             <div class="sauce-tabs" role="tablist" aria-label="Categorie salse">
-              <button class="sauce-tab active" data-tab="classic" role="tab">Classiche & Città</button>
-              <button class="sauce-tab" data-tab="special" role="tab">Special & Fusion</button>
+              <button class="sauce-tab active" data-tab="classic" role="tab" data-i18n="Classiche &amp; Città">Classiche & Città</button>
+              <button class="sauce-tab" data-tab="special" role="tab" data-i18n="Special &amp; Fusion">Special & Fusion</button>
+              <button class="sauce-tab" data-tab="curry" role="tab" data-i18n="Cocco &amp; Curry">🥥 Cocco & Curry</button>
               <span class="mashup-note" id="mashupNote">💡 Scegli 2 salse per il mashup (+€0.50)</span>
             </div>
             <div class="options-grid sauces-grid" id="step3-sauces"></div>
@@ -224,6 +227,7 @@
         <div class="summary-actions">
           <button class="btn btn-lime btn-block" id="addToCart">Aggiungi al carrello <span aria-hidden="true">→</span></button>
           <button class="btn btn-outline btn-block" id="shareBowl">Condividi / Copia ricetta</button>
+          <button class="btn btn-outline btn-block" id="saveCurrentBowl"><i class="ico" data-icon="heart"></i> <span data-i18n="Salva bowl">Salva bowl</span></button>
         </div>
       </aside>
     </div>
@@ -246,6 +250,13 @@
         <p class="section-sub">Le ricette che la città ha adottato. Già bilanciate, pronte a essere tue.</p>
       </div>
       <div class="head-badge alt" aria-hidden="true">⭐<span>TOP<br>SELLER</span></div>
+    </div>
+    <div class="quick-filters" role="group" aria-label="Filtri rapidi">
+      <span class="qf-label" data-i18n="FILTRA:">FILTRA:</span>
+      <button class="qf" data-qf="vegan"><i class="ico" data-icon="leaf"></i> <span data-i18n="Vegan">Vegan</span></button>
+      <button class="qf" data-qf="halal"><i class="ico" data-icon="shield"></i> <span>Halal</span></button>
+      <button class="qf" data-qf="protein"><i class="ico" data-icon="bolt"></i> <span data-i18n="High-Protein">High-Protein</span></button>
+      <button class="qf" data-qf="lowcarb"><i class="ico" data-icon="flame"></i> <span data-i18n="Low-Carb">Low-Carb</span></button>
     </div>
     <div class="sig-gallery" aria-label="Alcuni dei nostri piatti">
       <figure><img src="assets/mix-08.jpg" alt="Wok Box con noodles e broccoli" loading="lazy"><figcaption>Broccoli Wok</figcaption></figure>
@@ -271,10 +282,43 @@
       <div class="head-badge lime" aria-hidden="true">🥟<span>SNACK<br>ATTACK</span></div>
     </div>
     <div class="bites-tabs" role="tablist" aria-label="Categorie street bites">
-      <button class="bites-tab active" data-tab="food" role="tab">🥟 Street Bites</button>
-      <button class="bites-tab" data-tab="drink" role="tab">🧋 Bubble & Drink Bar</button>
+      <button class="bites-tab active" data-tab="food" role="tab" data-i18n="Street Bites">🥟 Street Bites</button>
+      <button class="bites-tab" data-tab="drink" role="tab" data-i18n="Bubble &amp; Drink Bar">🧋 Bubble & Drink Bar</button>
     </div>
     <div class="bites-grid" id="bitesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ SWEETS & DRINKS ============ -->
+<section class="section sweets-section" id="sweets">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker"><span>03b</span> / DOLCI &amp; BEVANDE</div>
+        <h2 class="section-title">IL FINALE <em>CHE VUOI.</em></h2>
+        <p class="section-sub" data-i18n="Dolci e bevande per chiudere in bellezza. Il 20-30% di margine in più sul tuo ticket.">Dolci e bevande per chiudere in bellezza. Il 20-30% di margine in più sul tuo ticket.</p>
+      </div>
+    </div>
+    <div class="sweets-grid" id="sweetsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ SAVED BOWLS ============ -->
+<section class="section saved-section" id="saved">
+  <div class="container">
+    <div class="saved-card">
+      <div class="saved-copy">
+        <div class="kicker light"><span>03c</span> / LE MIE BOWL</div>
+        <h2 class="section-title light-title">LA TUA RICETTA, <em>SEMPRE PRONTA.</em></h2>
+        <p data-i18n="Salva le tue bowl preferite con la tua email e riordina in un tap.">Salva le tue bowl preferite con la tua email e riordina in un tap.</p>
+        <div class="saved-form">
+          <input type="email" id="savedEmail" placeholder="tu@email.com" aria-label="Email" autocomplete="email">
+          <button class="btn btn-lime" id="saveBowlBtn" data-i18n="Salva bowl">Salva bowl</button>
+        </div>
+        <small data-i18n="Nessun account, solo il tuo indirizzo email su questo dispositivo.">Nessun account, solo il tuo indirizzo email su questo dispositivo.</small>
+      </div>
+      <div class="saved-list" id="savedList"></div>
+    </div>
   </div>
 </section>
 
@@ -317,7 +361,7 @@
     <div class="location-card">
       <div class="location-copy">
         <div class="kicker light"><span>05</span> / TROVACI A ROMA</div>
-        <h2 class="section-title light-title">TI ASPETTIAMO <em>AL WOK.</em></h2>
+        <h2 class="section-title light-title" data-i18n="TI ASPETTIAMO AL WOK." data-i18n-html>TI ASPETTIAMO <em>AL WOK.</em></h2>
         <p class="location-lead">Due cuori, una città, una sola fiamma. Passa a prendere la tua bowl calda o ordinati da dove vuoi — in 7 minuti è tra le tue mani.</p>
         <div class="location-details">
           <div class="loc-item"><span class="loc-ico">📍</span><div><strong>San Lorenzo</strong><small>Via dei Sabelli, 12 — 00185 Roma</small></div></div>
@@ -330,13 +374,9 @@
           <a class="btn btn-ghost btn-lg" href="https://www.google.com/maps/search/?api=1&query=Via+dei+Sabelli+Roma" target="_blank" rel="noopener">Indicazioni <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <div class="location-art" aria-hidden="true">
-        <div class="map-ring ring-1"></div>
-        <div class="map-ring ring-2"></div>
-        <div class="map-pin">🔥</div>
-        <div class="map-label label-1">SAN LORENZO</div>
-        <div class="map-label label-2">TRASTEVERE</div>
-        <div class="map-street s1"></div><div class="map-street s2"></div><div class="map-street s3"></div>
+      <div class="location-art">
+        <iframe title="Mappa FastWok San Lorenzo Roma" src="https://www.google.com/maps?q=Via%20dei%20Sabelli%2012%2C%20Roma&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&destination=Via+dei+Sabelli+12+Roma" target="_blank" rel="noopener"><i class="ico" data-icon="pin"></i> <span data-i18n="Indicazioni stradali">Indicazioni stradali</span></a>
       </div>
     </div>
   </div>
@@ -398,6 +438,7 @@
   <span class="lb-hint">Clicca fuori o premi ESC per chiudere · ← → per navigare</span>
 </div>
 
+<script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
