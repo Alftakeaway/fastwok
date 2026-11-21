@@ -314,8 +314,8 @@
     tofu: 'ing2-tofu', tempeh: 'ing2-tofu', edamame: 'ing2-greens', 'uovo-extra': 'ing2-egg',
     /* verdure */
     'pak-choi': 'ing2-bokchoy', broccoli: 'ing2-greens', champignon: 'ing2-champignon',
-    shiitake: 'ing2-shiitake', peperoni: 'ing2-mixveg', 'baby-corn': 'ing2-mixveg',
-    germogli: 'ing2-greens', zucchine: 'ing2-greens', cipollotto: 'ing2-greens',
+    shiitake: 'ing2-shiitake', peperoni: 'ing2-peperoni', 'baby-corn': 'ing2-babycorn',
+    germogli: 'ing2-germogli', zucchine: 'ing2-zucchine', cipollotto: 'ing2-cipollotto',
     ananas: 'ing2-pineapple', carote: 'ing2-carrot',
     /* salse */
     tokyo: 'top-sesamo', hongkong: 'top-arachidi', saigon: 'top-lime', beijing: 'top-aglio',
