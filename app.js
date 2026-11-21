@@ -30,7 +30,7 @@
   ];
 
   const PROTEINS = [
-    { id: 'pollo', name: 'Pollo al Wok', icon: '', price: 3, kcal: 180, pro: 32, carbs: 2, fat: 5, allergens: [], animal: true, meatFish: true },
+    { id: 'pollo', name: 'Pollo', icon: '', price: 3, kcal: 180, pro: 32, carbs: 2, fat: 5, allergens: [], animal: true, meatFish: true },
     { id: 'teriyaki', name: 'Pollo Teriyaki', icon: '', price: 3.2, kcal: 210, pro: 30, carbs: 12, fat: 6, allergens: ['soia'], animal: true, meatFish: true },
     { id: 'karaage', name: 'Karaage croccante', icon: '', price: 3.5, kcal: 260, pro: 28, carbs: 14, fat: 13, allergens: ['glutine', 'soia'], animal: true, meatFish: true },
     { id: 'manzo', name: 'Manzo marinato', icon: '', price: 4.5, kcal: 240, pro: 33, carbs: 3, fat: 11, allergens: ['soia'], animal: true, meatFish: true },
@@ -40,8 +40,8 @@
     { id: 'tempeh', name: 'Tempeh marinato', icon: '', price: 3, kcal: 170, pro: 19, carbs: 8, fat: 10, allergens: ['soia'], vegan: true },
     { id: 'edamame', name: 'Edamame boost', icon: '', price: 1.5, kcal: 90, pro: 9, carbs: 7, fat: 4, allergens: ['soia'], vegan: true },
     { id: 'uovo-extra', name: 'Extra Uovo', icon: '', price: 1.5, kcal: 70, pro: 6, carbs: 1, fat: 5, allergens: ['uova'], animal: true },
-    { id: 'duck', name: 'Anatra al Wok', icon: '', price: 5.5, kcal: 280, pro: 27, carbs: 2, fat: 19, allergens: ['soia'], animal: true, meatFish: true },
-    { id: 'pork', name: 'Maiale al Wok', icon: '', price: 4, kcal: 250, pro: 28, carbs: 4, fat: 14, allergens: ['soia'], animal: true, meatFish: true },
+    { id: 'duck', name: 'Anatra', icon: '', price: 5.5, kcal: 280, pro: 27, carbs: 2, fat: 19, allergens: ['soia'], animal: true, meatFish: true },
+    { id: 'pork', name: 'Maiale', icon: '', price: 4, kcal: 250, pro: 28, carbs: 4, fat: 14, allergens: ['soia'], animal: true, meatFish: true },
     { id: 'smoked-turkey', name: 'Tacchino Affumicato', icon: '', price: 4.5, kcal: 170, pro: 30, carbs: 2, fat: 4, allergens: ['soia'], animal: true, meatFish: true },
     { id: 'calamari', name: 'Calamari', icon: '', price: 5, kcal: 130, pro: 20, carbs: 4, fat: 3, allergens: ['crostacei', 'pesce'], animal: true, meatFish: true },
     { id: 'gamberetti', name: 'Gamberetti', icon: '', price: 4.5, kcal: 110, pro: 22, carbs: 1, fat: 2, allergens: ['crostacei'], animal: true, meatFish: true },
@@ -194,15 +194,15 @@
       nameSuggest: 'Udon Mare & Funghi'
     },
     {
-      id: 'wok-pollo-verdure', name: 'Wok Pollo & Verdure', emoji: '', tag: 'WOK CLASSIC', tagClass: '', price: 11.5,
+      id: 'wok-pollo-verdure', name: 'Pollo & Verdure', emoji: '', tag: 'WOK CLASSIC', tagClass: '', price: 11.5,
       desc: 'Noodles saltati con pollo, broccoli croccanti, peperoni e cipollotto. Sesamo tostato e salsa Tokyo: semplice, vincente.',
       chips: [' Pollo', ' Broccoli', ' Peperoni'],
       config: { format: 'classic', soup: 'umami', base: 'egg-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'peperoni', 'cipollotto'], sauces: ['tokyo'], spice: 1, toppings: ['sesamo'] },
-      nameSuggest: 'Wok Pollo & Verdure'
+      nameSuggest: 'Pollo & Verdure'
     },
     {
       id: 'pad-thai-grigliato', name: 'Pad Thai Grigliato', emoji: '', tag: 'GRIGLIATO', tagClass: '', price: 12,
-      desc: 'Rice noodles, pollo alla griglia, germogli, arachidi e lime. Il profumo della griglia che incontra il wok.',
+      desc: 'Rice noodles, pollo alla griglia, germogli, arachidi e lime. Il profumo della griglia che incontra il street food asiatico.',
       chips: [' Pollo griglia', ' Arachidi', ' Lime'],
       config: { format: 'classic', soup: 'lemongrass', base: 'rice-noodles', eggMode: 'standard', proteins: ['pollo'], veggies: ['germogli', 'cipollotto'], sauces: ['satay'], spice: 1, toppings: ['arachidi', 'lime', 'coriandolo'] },
       nameSuggest: 'Pad Thai Grigliato'
@@ -244,7 +244,7 @@
     },
     {
       id: 'jasmine-rice', name: 'Jasmine Rice Bowl', emoji: '', tag: 'FRESH', tagClass: 'green', price: 11.5,
-      desc: 'Riso jasmine profumato con pollo al wok e verdure fresche. Leggero, completo, sempre azzeccato.',
+      desc: 'Riso jasmine profumato con pollo e verdure fresche. Leggero, completo, sempre azzeccato.',
       chips: [' Jasmine', ' Pollo', ' Verdure'],
       config: { format: 'classic', soup: 'umami', base: 'jasmine', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'zucchine', 'peperoni'], sauces: ['hongkong'], spice: 1, toppings: ['cipolla-cr', 'sesamo'] },
       nameSuggest: 'Jasmine Rice Bowl'
@@ -258,7 +258,7 @@
     },
     {
       id: 'riso-fritto-box', name: 'Riso Fritto Box', emoji: '', tag: 'CLASSICO', tagClass: '', price: 11.5,
-      desc: 'Riso jasmine saltato al wok con pollo, uovo, broccoli e carote. Quello che ordini quando hai già deciso, ma non vuoi pensarci.',
+      desc: 'Riso jasmine con pollo, uovo, broccoli e carote. Quello che ordini quando hai già deciso, ma non vuoi pensarci.',
       chips: [' Riso fritto', ' Pollo', ' Verdure'],
       config: { format: 'classic', soup: 'umami', base: 'jasmine', eggMode: 'standard', proteins: ['pollo'], veggies: ['broccoli', 'carote', 'cipollotto'], sauces: ['hongkong'], spice: 1, toppings: ['sesamo', 'lime'] },
       nameSuggest: 'Riso Fritto Box'
@@ -296,7 +296,7 @@
     { id: 'shumai-gambero', name: 'Shumai Gambero', sub: 'Ravioli gambero, 4 pezzi', emoji: '', price: 6.5, tag: 'TOP', flags: ['glutine', 'crostacei'] },
     { id: 'tempura-gamberi', name: 'Tempura Gamberi', sub: 'Croccanti, 5 pezzi', emoji: '', price: 7.5, tag: 'CRUNCH', flags: ['glutine', 'crostacei'] },
     { id: 'gamberi-fritti', name: 'Gamberi Croccanti', sub: 'Con salsa agrodolce', emoji: '', price: 7, tag: 'HOT', flags: ['glutine', 'crostacei'] },
-    { id: 'chicken-wings', name: 'Ali di Pollo Wok', sub: 'Glassate, 6 pezzi', emoji: '', price: 6.5, tag: 'HOT', flags: ['soia'] },
+    { id: 'chicken-wings', name: 'Ali di Pollo', sub: 'Glassate, 6 pezzi', emoji: '', price: 6.5, tag: 'HOT', flags: ['soia'] },
     { id: 'misto-box', name: 'Snack Box Misto', sub: 'Gyoza, edamame e croccanti', emoji: '', price: 9.5, tag: 'SHARE', flags: ['glutine', 'soia'] },
     { id: 'sate-ayam', name: 'Sate Ayam', sub: 'Spiedini indonesiani, salsa arachidi', emoji: '', price: 6.5, tag: 'INDONESIA', flags: ['arachidi', 'soia'] },
     { id: 'mango-sticky', name: 'Mango Sticky Rice', sub: 'Riso glutinoso, mango e cocco', emoji: '', price: 5.5, tag: 'DOLCE', flags: [] },
@@ -973,7 +973,7 @@
       const key = cap ? cap.textContent.trim() : '';
       return { items: GALLERY_INGREDIENTS[key] || ['Wok appena saltato'], allergens: ['glutine', 'soia'] };
     }
-    return { items: ['Egg Noodles', 'Pollo al Wok', 'Broccoli', 'Peperoni', 'Sesamo', 'Salsa Tokyo'], allergens: ['glutine', 'uova', 'soia'] };
+    return { items: ['Egg Noodles', 'Pollo', 'Broccoli', 'Peperoni', 'Sesamo', 'Salsa Tokyo'], allergens: ['glutine', 'uova', 'soia'] };
   }
   function showLb(i) {
     if (!lbList.length) return;
