@@ -136,7 +136,8 @@ a{color:inherit;text-decoration:none}
 .section-title em{font-style:normal;color:var(--flame);-webkit-text-stroke:0}
 .section-sub{margin-top:16px;max-width:560px;color:#c9c6bd;line-height:1.6;font-size:1rem}
 .head-badge{flex-shrink:0;width:104px;height:104px;border-radius:50%;background:var(--yellow);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transform:rotate(10deg);font-size:1.7rem;box-shadow:0 10px 0 #b78a00}
-.head-badge span{font-family:var(--display);font-size:.8rem;line-height:.95;text-align:center;letter-spacing:.02em}
+.head-badge span{font-family:var(--display);font-size:.8rem;line-height:.95;text-align:center;letter-spacing:.02em;position:relative;z-index:2}
+.head-badge img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;border-radius:50%;opacity:.28;z-index:1}
 .head-badge.alt{background:var(--chili);color:#fff;box-shadow:0 10px 0 #8c1c15}
 .head-badge.lime{background:var(--lime);box-shadow:0 10px 0 #7a9e1a}
 .light-title{color:var(--white)}
@@ -405,6 +406,15 @@ a{color:inherit;text-decoration:none}
 /* ---------- lightbox / zoom ---------- */
 .lightbox{display:none;position:fixed;inset:0;z-index:400;background:rgba(8,8,10,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:60px 70px;animation:fadeUp .25s ease}
 .lightbox.open{display:flex}
+.sig-tags span{display:inline-flex;align-items:center;gap:5px}
+.sig-tags img{width:18px;height:18px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.25)}
+.opt-ico-svg{display:grid;place-items:center;width:100%;height:100%;color:var(--flame)}
+.opt-ico-svg svg{width:36%;height:36%}
+.badge{display:inline-flex;align-items:center;gap:4px}
+.badge .ico{width:12px;height:12px}
+.flames{display:inline-flex;gap:1px;color:var(--flame)}
+.flames .ico{width:1.1em;height:1.1em}
+.sf .ico{width:1.15em;height:1.15em;display:block}
 .lb-figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;width:min(92vw,1100px);height:82vh}
 .lb-figure img{width:100%;flex:1;min-height:0;object-fit:contain;border-radius:14px;border:2px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.7);animation:zoomIn .3s cubic-bezier(.2,.9,.3,1.2)}
 .lb-figure figcaption{font-family:var(--display);font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;color:var(--yellow);text-align:center;flex-shrink:0}
